@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="show" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Edit_OrderController">
+   <children>
+      <TextField fx:id="reffe" layoutX="560.0" layoutY="279.0" prefHeight="38.0" prefWidth="338.0" />
+      <TextField fx:id="numero" layoutX="560.0" layoutY="329.0" prefHeight="38.0" prefWidth="338.0" />
+      <TextField fx:id="regio" layoutX="559.0" layoutY="430.0" prefHeight="38.0" prefWidth="338.0" />
+      <TextField fx:id="payss" layoutX="559.0" layoutY="380.0" prefHeight="38.0" prefWidth="338.0" />
+      <Text fx:id="reff" fill="#3e6fae" layoutX="412.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="reference" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Text>
+      <Text fx:id="tel" fill="#3e6fae" layoutX="416.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Text>
+      <Text fx:id="pays" fill="#3e6fae" layoutX="416.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Text>
+      <Text fx:id="region" fill="#3e6fae" layoutX="419.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Region" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Text>
+      <Button fx:id="update" layoutX="898.0" layoutY="212.0" mnemonicParsing="false" onAction="#update_order2" prefHeight="25.0" prefWidth="75.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Text layoutX="238.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="124.5367431640625" />
+      <AnchorPane prefHeight="70.0" prefWidth="1366.0">
+         <children>
+            <AnchorPane prefHeight="70.0" prefWidth="1359.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox layoutX="200.0" layoutY="-17.0" prefHeight="40.0" prefWidth="1087.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                     <children>
+                        <HBox prefHeight="40.0" prefWidth="1132.0">
+                           <children>
+                              <HBox onMouseClicked="#form" prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css" />
+                              <HBox prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css" />
+                              <HBox onMouseClicked="#abon" prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css" />
+                              <HBox onMouseClicked="#stat" prefHeight="45.0" prefWidth="305.0" styleClass="menuItem" stylesheets="@../style/style.css" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <Button fx:id="flesh_id" layoutX="6.0" layoutY="23.0" mnemonicParsing="false" onAction="#fleshbutton" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" textFill="WHITE" />
+                  <ImageView fx:id="flesh2" fitHeight="31.0" fitWidth="41.0" layoutX="31.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/backIcon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="etatt" layoutX="559.0" layoutY="478.0" prefHeight="38.0" prefWidth="338.0" />
+      <Text fx:id="etat" fill="#3e6fae" layoutX="416.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Text>
+      <TextField fx:id="codepostal" layoutX="560.0" layoutY="525.0" prefHeight="38.0" prefWidth="338.0" />
+      <Text fx:id="etat1" fill="#3e6fae" layoutX="416.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="code postal" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Text>
+      <AnchorPane fx:id="slider1" layoutY="62.0" prefHeight="70.0" prefWidth="1757.0" style="-fx-background-color: #242B6E;">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit une commande" textAlignment="CENTER" wrappingWidth="189.69842529296875">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="16.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="45.0" fitWidth="47.0" layoutX="210.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/abo2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="slider11" layoutX="-1.0" layoutY="744.0" prefHeight="27.0" prefWidth="1758.0" style="-fx-background-color: #242B6E;" />
+      <ImageView fx:id="cmde3" fitHeight="45.0" fitWidth="47.0" layoutX="1561.0" layoutY="12.0" onMouseClicked="#cmde3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/abo2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1606.0" layoutY="12.0" prefHeight="45.0" prefWidth="137.0" text="list of Commands" textFill="#908a8a" />
+   </children>
+</AnchorPane>

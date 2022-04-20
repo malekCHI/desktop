@@ -3,20 +3,43 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/tn/esprit/services/IserciceProduct.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/javafxapplication1/Main6.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/tn/esprit/entities/Product.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/javafxapplication1/Main1.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/javafxapplication1/Main2.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/tn/esprit/utils/DBUtil.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/tn/esprit/services/OrderService.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/tn/esprit/services/CartService.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/tn/esprit/services/ServiceProduct.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/tn/esprit/services/IInterface.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/tn/esprit/entities/Item.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/javafxapplication1/JavaFXApplication1.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/javafxapplication1/TestMain.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/JavaFXApplication1/src/tn/esprit/entities/Order.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/AjouterOrderFront.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/services/IserciceProduct.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/Ajouter_OrderController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/Edit_OrderController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/Cart/ShoppingCart.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/orderAffiche.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/values/style.css</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/home/HomeView.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/AjouterOrder.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/item.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/home/home.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/ItemController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/orderAfficheFront.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/Desktop.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/entities/Order.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/Back.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/Edit_OrderControllerBack.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/App.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/EditOrderFront.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/Ajouter_OrderControllerBack.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/Cart/cart.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/MarketController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/services/ServiceProduct.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/style/style.css</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/services/OrderService.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/EditOrder.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/services/IInterface.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/Market.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/Cart/CartView.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/home/HomeController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/home/Product.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/CartController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/AfficherOrderBackController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/entities/Item.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/Cart/CartEntry.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/AfficherOrderController.java</file>
         </group>
     </open-files>
 </project-private>
