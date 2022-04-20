@@ -16,8 +16,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -161,6 +163,24 @@ public class Edit_OrderController implements Initializable {
         OrderService pr=OrderService.getInstance();
         pr.modifierPST(prom); 
         showMessageDialog(null, "update with succese");
+        
+                reffe.setText("");
+                numero.setText("");
+                payss.setText("");
+                regio.setText("");
+                etatt.setText("");
+                codepostal.setText("");
+                try {
+                    Parent parent = FXMLLoader.load(getClass().getResource("/view/orderAfficheFront.fxml"));
+                    Scene scene = new Scene(parent);
+                    Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                    stage.setScene(scene);
+                   
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            
     }
     /**
      * Initializes the controller class.

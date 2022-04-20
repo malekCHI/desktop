@@ -82,6 +82,8 @@ public class AfficherOrderController implements Initializable {
     private ImageView homecart;
     @FXML
     private Label home1;
+    @FXML
+    private ImageView homeMarket;
     
     
     /**
@@ -89,6 +91,8 @@ public class AfficherOrderController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+                
         OrderService evcrud = new OrderService();
         ArrayList<Order> ev = (ArrayList<Order>) evcrud.afficher();
         ObservableList<Order> obs = FXCollections.observableArrayList(ev);
@@ -128,7 +132,7 @@ public class AfficherOrderController implements Initializable {
         // TODO
     }    
 
-    @FXML
+         @FXML
     private void deco(MouseEvent event) {
     }
 
@@ -228,6 +232,22 @@ public class AfficherOrderController implements Initializable {
          try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/EditOrderFront.fxml"));
             Stage stage = (Stage) edit.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AfficherOrderController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void homeMarket(MouseEvent event) {
+        
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/Market.fxml"));
+            Stage stage = (Stage) homeMarket.getScene().getWindow();
             stage.close();
             Scene scene = new Scene(root);
             

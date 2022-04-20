@@ -52,7 +52,7 @@
                                                    <children>
                                                       <HBox onMouseClicked="#form" prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                                          <children>
-                                                            <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                                            <ImageView fx:id="homeMarket" fitHeight="45.0" fitWidth="47.0" onMouseClicked="#homeMarket" pickOnBounds="true" preserveRatio="true">
                                                                <image>
                                                                   <Image url="@../img/dash1.png" />
                                                                </image>

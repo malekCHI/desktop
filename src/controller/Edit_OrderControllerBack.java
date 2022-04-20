@@ -16,6 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -110,7 +111,7 @@ public class Edit_OrderControllerBack implements Initializable {
     }
 
     @FXML
-    void update_orderBack(ActionEvent event) throws SQLException {
+    void update_orderBack(ActionEvent Order) throws SQLException {
        Boolean Etat;
         
         Order prom = new Order();
@@ -131,6 +132,15 @@ public class Edit_OrderControllerBack implements Initializable {
         OrderService pr=OrderService.getInstance();
         pr.modifierPST(prom); 
         showMessageDialog(null, "update with succese");
+         try {
+                    Parent parent = FXMLLoader.load(getClass().getResource("/view/orderAffiche.fxml"));
+                    Scene scene = new Scene(parent);
+                    Stage stage = (Stage) ((Node)Order.getSource()).getScene().getWindow();
+                    stage.setScene(scene);
+                   
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
     }
     /**
      * Initializes the controller class.

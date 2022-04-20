@@ -18,8 +18,8 @@
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font></Text>
-      <TextField fx:id="reffe" layoutX="559.0" layoutY="268.0" prefHeight="34.0" prefWidth="300.0" />
-      <TextField fx:id="numero" layoutX="559.0" layoutY="329.0" prefHeight="34.0" prefWidth="300.0" />
+      <TextField fx:id="reff" layoutX="559.0" layoutY="268.0" prefHeight="34.0" prefWidth="300.0" />
+      <TextField fx:id="tel" layoutX="559.0" layoutY="329.0" prefHeight="34.0" prefWidth="300.0" />
       <TextField fx:id="regio" layoutX="559.0" layoutY="430.0" prefHeight="34.0" prefWidth="300.0" />
       <TextField fx:id="payss" layoutX="559.0" layoutY="380.0" prefHeight="34.0" prefWidth="300.0" />
       <Text fx:id="reff" fill="#3e6fae" layoutX="412.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="reference" textAlignment="CENTER">
