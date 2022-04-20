@@ -42,7 +42,7 @@ public class JavaFXApplication extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Hello World");
         
-        parentPage = FXMLLoader.load(getClass().getResource("/gui/ListOfCategory.fxml"));
+        parentPage = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
         Scene scene = new Scene(parentPage);
         this.primaryStage.setScene(scene);
         this.primaryStage.show();

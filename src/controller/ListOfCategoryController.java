@@ -29,6 +29,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -68,6 +69,19 @@ public class ListOfCategoryController implements Initializable {
     public static int id_rec;
     @FXML
     private Button addCat;
+    @FXML
+    private Label goProd;
+    @FXML
+    private Label goCat;
+    @FXML
+    private ImageView iconProd;
+    @FXML
+    private ImageView iconCat;
+    private Button reload;
+    @FXML
+    private Button Sum;
+    @FXML
+    private TextField nbrProd;
 
     /**
      * Initializes the controller class.
@@ -190,6 +204,91 @@ public class ListOfCategoryController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(ListOfCategoryController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void goListProd(MouseEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) goProd.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void goListCat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfCategory.fxml"));
+            Stage stage = (Stage) goCat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconGoProd(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) iconProd.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconGoCat(MouseEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfCategory.fxml"));
+            Stage stage = (Stage) iconCat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void btnReload(ActionEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfCategory.fxml"));
+            Stage stage = (Stage) reload.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void calculer(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnSum(ActionEvent event) {
+        ServiceCategory ec = new ServiceCategory();
+        String s = ec.countCategory();
+        nbrProd.setText(s);
     }
     
 }

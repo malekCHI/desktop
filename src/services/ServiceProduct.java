@@ -60,7 +60,7 @@ public class ServiceProduct implements IProduct<Product>{
     
           
           
-        String req="insert into product (reference,product_name,description,image,price,stock) values (?,?,?,?,?,?)";
+        String req="insert into product (reference,product_name,description,image,price,stock,category_id) values (?,?,?,?,?,?,?)";
         try {
             pst=cnx.prepareStatement(req); 
             System.out.println(c);
@@ -76,6 +76,7 @@ public class ServiceProduct implements IProduct<Product>{
             pst.setString(4, c.getImage());
             pst.setInt(5, c.getPrice());
             pst.setInt(6, c.getStock());
+            pst.setInt(7, c.getCat());
             //pst.setInt(7, c.getCategory().getId());
 
 
@@ -124,6 +125,9 @@ public class ServiceProduct implements IProduct<Product>{
         
         return produits;
     }
+    
+    
+ 
     
    /* public void supprimer(Product t ){
             String req="delete from product where product_name=? ";

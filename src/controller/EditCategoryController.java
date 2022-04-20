@@ -7,18 +7,26 @@ package controller;
 
 import entities.Category;
 import entities.Product;
+import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import static javax.swing.JOptionPane.showMessageDialog;
 import services.ServiceCategory;
 import services.ServiceProduct;
@@ -49,7 +57,15 @@ public class EditCategoryController implements Initializable {
     @FXML
     private TextField txtDescCat;
     @FXML
-    private Button editbtnSave;
+    private Label goProd;
+    @FXML
+    private Label goCat;
+    @FXML
+    private ImageView iconProd;
+    @FXML
+    private ImageView iconCat;
+    @FXML
+    private Button back;
 
     /**
      * Initializes the controller class.
@@ -90,6 +106,77 @@ public class EditCategoryController implements Initializable {
 
     @FXML
     private void back(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfCategory.fxml"));
+            Stage stage = (Stage) back.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void goToListP(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) goProd.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void goToListC(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfCategory.fxml"));
+            Stage stage = (Stage) goCat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconGoProd(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) iconProd.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconGoCat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfCategory.fxml"));
+            Stage stage = (Stage) iconCat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

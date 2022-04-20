@@ -13,12 +13,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditProductController">
+<AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditProductController">
    <children>
       <Text layoutX="238.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="124.5367431640625" />
-      <AnchorPane fx:id="slider" layoutY="68.0" prefHeight="700.0" prefWidth="229.0" style="-fx-background-color: black;">
+      <AnchorPane fx:id="slider" layoutY="68.0" prefHeight="700.0" prefWidth="229.0" style="-fx-background-color: #4682B4;">
          <children>
-            <VBox layoutX="38.0" layoutY="184.0" prefHeight="632.0" prefWidth="229.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="-53.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+            <VBox layoutX="38.0" layoutY="184.0" prefHeight="632.0" prefWidth="229.0" style="-fx-background-color: #4682B4;" AnchorPane.bottomAnchor="-53.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
                <children>
                   <HBox onMouseClicked="#form" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
                      <children>
@@ -37,7 +37,7 @@
                               <Image url="@../img/panier.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="53.0" prefWidth="130.0" text="Gestion Promotion" textFill="WHITE" />
+                        <Label fx:id="goProd" onMouseClicked="#btnGoProd" prefHeight="53.0" prefWidth="130.0" text="Products" textFill="WHITE" />
                      </children>
                   </HBox>
                   <HBox onMouseClicked="#abon" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
@@ -47,7 +47,7 @@
                               <Image url="@../img/abo.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="53.0" prefWidth="126.0" text="Gestion Evenement" textFill="WHITE" />
+                        <Label fx:id="goCat" onMouseClicked="#btnGoCat" prefHeight="53.0" prefWidth="126.0" text="Categories" textFill="WHITE" />
                      </children>
                   </HBox>
                   <HBox onMouseClicked="#stat" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
@@ -57,7 +57,7 @@
                               <Image url="@../img/iii.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="60.0" prefWidth="95.0" text="Statistique" textFill="WHITE" />
+                        <Label prefHeight="60.0" prefWidth="95.0" text="Statistics" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>
@@ -68,7 +68,7 @@
          <children>
             <AnchorPane prefHeight="70.0" prefWidth="1359.0" style="-fx-background-color: white;">
                <children>
-                  <Pane layoutX="181.0" layoutY="20.0" prefHeight="25.0" prefWidth="1311.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Pane layoutX="181.0" layoutY="20.0" prefHeight="25.0" prefWidth="1311.0" style="-fx-background-color: #4682B4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <HBox layoutX="200.0" layoutY="-17.0" prefHeight="40.0" prefWidth="1087.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                      <children>
                         <HBox prefHeight="40.0" prefWidth="1132.0">
@@ -80,27 +80,27 @@
                                           <Image url="@../img/dash1.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="60.0" prefWidth="95.0" text="Accueil" textFill="#908a8a" />
+                                    <Label prefHeight="60.0" prefWidth="95.0" text="Accueil" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
-                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="iconProd" fitHeight="45.0" fitWidth="47.0" onMouseClicked="#iconListProd" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../img/panier2.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="45.0" prefWidth="160.0" text="Gestion Promotion" textFill="#908a8a" />
+                                    <Label prefHeight="45.0" prefWidth="160.0" text="Products" />
                                  </children>
                               </HBox>
                               <HBox onMouseClicked="#abon" prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
-                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="iconCat" fitHeight="45.0" fitWidth="47.0" onMouseClicked="#iconListCat" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../img/abo2.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="45.0" prefWidth="144.0" text="Gestion Evenement" textFill="#908a8a" />
+                                    <Label prefHeight="45.0" prefWidth="144.0" text="Categories" />
                                  </children>
                               </HBox>
                               <HBox onMouseClicked="#stat" prefHeight="45.0" prefWidth="305.0" styleClass="menuItem" stylesheets="@../style/style.css">
@@ -110,7 +110,7 @@
                                           <Image url="@../img/stat2.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="60.0" prefWidth="95.0" text="Statistique" textFill="#908a8a" />
+                                    <Label prefHeight="60.0" prefWidth="95.0" text="Statistics" />
                                  </children>
                               </HBox>
                            </children>
@@ -139,17 +139,17 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Label fx:id="editName" layoutX="570.0" layoutY="312.0" text="Product Name" textFill="WHITE">
+      <Label fx:id="editName" layoutX="570.0" layoutY="312.0" text="Product Name" textFill="#141414">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="editRef" layoutX="570.0" layoutY="270.0" text="Reference" textFill="WHITE">
+      <Label fx:id="editRef" layoutX="570.0" layoutY="270.0" text="Reference">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="editDesc" layoutX="570.0" layoutY="357.0" text="Description" textFill="WHITE">
+      <Label fx:id="editDesc" layoutX="570.0" layoutY="357.0" text="Description">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
@@ -162,26 +162,26 @@
          </font>
       </Button>
       <ComboBox fx:id="comboCat" layoutX="719.0" layoutY="402.0" prefHeight="22.0" prefWidth="150.0" />
-      <Label fx:id="editCat" layoutX="572.0" layoutY="397.0" text="Category" textFill="WHITE">
+      <Label fx:id="editCat" layoutX="572.0" layoutY="397.0" text="Category">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
       <TextField fx:id="txtDescription" layoutX="719.0" layoutY="353.0" />
       <TextField fx:id="txtPrice" layoutX="721.0" layoutY="445.0" />
-      <Label fx:id="editPrice" layoutX="572.0" layoutY="449.0" text="Price" textFill="WHITE">
+      <Label fx:id="editPrice" layoutX="572.0" layoutY="449.0" text="Price">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
       <TextField fx:id="txtStock" layoutX="722.0" layoutY="489.0" />
-      <Label fx:id="editStock" layoutX="572.0" layoutY="493.0" text="Stock" textFill="WHITE">
+      <Label fx:id="editStock" layoutX="572.0" layoutY="493.0" text="Stock">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
       <Button fx:id="editBtnImage" layoutX="563.0" layoutY="537.0" mnemonicParsing="false" text="Insert Image" textFill="#181818" />
-      <Button fx:id="editbtnSave" layoutX="948.0" layoutY="599.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="76.0" style="-fx-background-color: Blue;" text="Back" textFill="#fefeff">
+      <Button fx:id="back" layoutX="948.0" layoutY="599.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="76.0" style="-fx-background-color: Blue;" text="Back" textFill="#fefeff">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>

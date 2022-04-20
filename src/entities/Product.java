@@ -18,6 +18,7 @@ public class Product {
     private int price;
     private int stock;
     public Category category;
+    public int cat;
 
     public Product() {
     }
@@ -90,6 +91,17 @@ public class Product {
         this.stock = stock;
     }
 
+    public Product(String reference, String ProductName, String description, int price, int stock, String image,int cat) {
+        this.reference = reference;
+        this.ProductName = ProductName;
+        this.description = description;
+        this.price = price;
+        this.stock = stock;
+        this.image = image;
+        this.cat= cat;
+
+    }
+
     
 
     
@@ -121,6 +133,14 @@ public class Product {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public int getCat() {
+        return cat;
+    }
+
+    public void setCat(int cat) {
+        this.cat = cat;
     }
     
     

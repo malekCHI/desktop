@@ -7,22 +7,34 @@ package controller;
 
 import entities.Category;
 import entities.Product;
+import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
 import java.sql.Connection;
 import java.time.ZoneId;
+import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import services.ServiceCategory;
 import services.ServiceProduct;
 import utils.Data;
+import utils.DataValidationUtils;
 
 /**
  * FXML Controller class
@@ -53,6 +65,16 @@ public class AddCategoryController implements Initializable {
     private Button btnSaveCat;
     Connection cnx = Data.getInstance().getCnx();
     ServiceCategory serviceCat = ServiceCategory.getInstance();
+    @FXML
+    private Label goProd;
+    @FXML
+    private Label goCat;
+    @FXML
+    private ImageView iconProd;
+    @FXML
+    private ImageView iconCat;
+    @FXML
+    private Button back;
     
     
 
@@ -62,9 +84,54 @@ public class AddCategoryController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        /*btnSaveCat.setOnAction(event -> {
+        if(txtNameCat.getText().trim().isEmpty() || txtDescCat.getText().trim().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.setContentText("Check your fields! ");
+                alert.show();
 
+            } else {
+                try {
+
+                Product p = new Product(txtNameCat.getText(),txtDescCat.getText(),
+                       
+                ServiceProduct serviceProd = ServiceProduct.getInstance();
+                serviceProd.add(p);
+                               
+              
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.setContentText("Product added successfuly!");
+                alert.show();
+                txtNameCat.setText(" ");
+                txtDescCat.setText(" ");
+                
+                
+                try {
+                Parent parent = FXMLLoader.load(getClass().getResource("/view/AddProduct.fxml"));
+                       Scene scene = new Scene(parent);
+                        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                        stage.setScene(scene);
+                        stage.close();
+
+             } catch (IOException ex) {
+                System.out.println("error in displaying products");
+            }
+               
+                  }catch (NumberFormatException ex) {
+                        System.out.println("noo");
+                      
+                    } 
+        }
+        });
+                }*/
+
+        // TODO
+        
+    }
     @FXML
     private void form(MouseEvent event) {
     }
@@ -87,8 +154,37 @@ public class AddCategoryController implements Initializable {
         if (txtNameCat.getText().isEmpty() || txtDescCat.getText().isEmpty() ) {
                System.out.println("Fields Are Empty");
             // show.setText("Enter all details");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.setContentText("Check your fields! ");
+                alert.show();
 
         } else {
+            
+            
+            
+            
+            
+            if (!DataValidationUtils.isProductNameValid(txtNameCat.getText().replaceAll("\\s", ""))) {
+                txtNameCat.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+                System.out.println("Product name is invalid");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.setContentText("invalid name!");
+                alert.show();
+        } else 
+            if(!DataValidationUtils.isDescriptionValid(txtDescCat.getText().replaceAll("\\s", ""))) {
+                txtDescCat.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+                System.out.println("Description is invalid");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.setContentText("invalid description !");
+                alert.show(); }
+            else {
+           
             String name = txtNameCat.getText();
             String desc = txtDescCat.getText();
             
@@ -101,8 +197,99 @@ public class AddCategoryController implements Initializable {
             
             
                System.err.println("Added Seccessfully");
-            
+               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Information Dialog");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Category added successfuly!");
+                        alert.show();
+                        txtNameCat.setText("");
+                        txtDescCat.setText("");
+                      
+            try {
+                    Parent parent = FXMLLoader.load((getClass().getResource("/gui/ListOfCategory.fxml")));
+                    Scene scene = new Scene(parent);
+                    Stage stage = (Stage) ((Node)Category.getSource()).getScene().getWindow();
+                    stage.setScene(scene);
+                 } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
+            
+        }}
+    }
+
+    @FXML
+    private void goListProd(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) goProd.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void goListCat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) goCat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconGoProd(MouseEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) iconProd.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconGoCat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfCategory.fxml"));
+            Stage stage = (Stage) iconCat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void backk(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) back.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
