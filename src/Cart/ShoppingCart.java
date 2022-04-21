@@ -18,6 +18,9 @@ import java.util.Map;
  */
 public class ShoppingCart {
     
+    //singletons should have single method for initializing and accessing it
+    //This way the instance will never be null when you need it.
+    
     private static ShoppingCart INSTANCE;
     
     public static ShoppingCart getInstance(){

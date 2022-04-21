@@ -149,7 +149,24 @@ public class OrderService implements IInterface{
         return instance;
     }
 
-    
+    public String countOrder() {
+
+        String req = "SELECT COUNT(*) FROM commande";
+        PreparedStatement pst;
+        try {
+            pst = cnx.prepareStatement(req);
+            pst.executeQuery(req);
+            ResultSet rs = pst.getResultSet();
+            rs.next();
+            return ("  " + rs.getInt("count(*)") + " Order");
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            return null;
+        }
+        
+        
+
+    }
     
     
 

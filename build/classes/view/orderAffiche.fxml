@@ -29,7 +29,7 @@
                                  <children>
                                     <AnchorPane prefHeight="70.0" prefWidth="1359.0" style="-fx-background-color: white;">
                                        <children>
-                                          <Pane layoutX="181.0" layoutY="20.0" prefHeight="25.0" prefWidth="1311.0" style="-fx-background-color: #0A115A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Pane layoutX="181.0" layoutY="1.0" prefHeight="25.0" prefWidth="1359.0" style="-fx-background-color: #0A115A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
                                                 <Label layoutX="1176.0" layoutY="4.0" prefHeight="17.0" prefWidth="56.0" text="Admin :" textFill="#fcfcfc">
                                                    <font>
@@ -49,17 +49,14 @@
                                              </children></Pane>
                                           <HBox layoutX="200.0" layoutY="-17.0" prefHeight="45.0" prefWidth="1168.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                                              <children>
-                                                <HBox prefHeight="40.0" prefWidth="1132.0">
-                                                   <children>
-                                                      <Label alignment="CENTER" prefHeight="43.0" prefWidth="894.0" text="GameX" textFill="#fc0000">
-                                                         <font>
-                                                            <Font name="Arial Rounded MT Bold" size="36.0" />
-                                                         </font>
-                                                      </Label>
-                                                   </children>
-                                                </HBox>
+                                                <HBox prefHeight="40.0" prefWidth="1132.0" />
                                              </children>
                                           </HBox>
+                                          <ImageView fitHeight="43.0" fitWidth="139.0" layoutX="20.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../img/logo%209%20(1).png" />
+                                             </image>
+                                          </ImageView>
                                        </children>
                                     </AnchorPane>
                                  </children>

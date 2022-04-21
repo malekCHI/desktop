@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -25,11 +27,11 @@
                             <children>
                                 <HBox fx:id="sideControls" alignment="CENTER" prefHeight="25.0" prefWidth="67.0" spacing="8.0" style="-fx-background-color: #242B6E;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label text="GameX" textFill="WHITE">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="31.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fitHeight="58.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/logo%209%20(1).png" />
+                                 </image>
+                              </ImageView>
                            </children></HBox>
                                 <VBox fx:id="sideNav" alignment="TOP_CENTER" prefHeight="545.0" prefWidth="191.0" spacing="30.0" style="-fx-background-color: #242B6E; -fx-background-color: ;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" VBox.vgrow="ALWAYS">
                                     <children>

@@ -5,9 +5,19 @@
  */
 package controller;
 
+import Cart.CartEntry;
+import Cart.ShoppingCart;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Array;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,11 +29,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.Separator;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -32,11 +47,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import static org.apache.poi.xwpf.usermodel.XWPFRun.FontCharRange.cs;
 import static sun.util.calendar.CalendarUtils.mod;
 import static sun.util.calendar.CalendarUtils.mod;
 import tn.desktop.entities.Order;
 import tn.desktop.services.OrderService;
+import tn.desktop.utils.DBUtil;
 
 /**
  * FXML Controller class
@@ -84,15 +106,39 @@ public class AfficherOrderController implements Initializable {
     private Label home1;
     @FXML
     private ImageView homeMarket;
+    @FXML
+    private Button calcul;
+    @FXML
+    private TextField cal;
+    @FXML
+    private TableColumn<Order,String> product;
     
-    
+    private Connection cnx;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+       /* List<CartEntry> entries = ShoppingCart.getInstance().getEntries();
 
-                
+         Label shoppingCartTitle=new Label("Shopping cart");
+            //cartPane.getChildren().add(shoppingCartTitle);
+            System.out.println("maleknhhh");
+            for(CartEntry cartEntry:entries){
+            try {
+                HBox productView = cartEntryView(cartEntry);
+                cartPane.getChildren().add(productView);
+                System.out.println("jjjj");
+                Separator separator =new Separator();
+                separator.setOrientation(Orientation.HORIZONTAL);
+                cartPane.getChildren().add(separator);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(AfficherOrderController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }*/
+        
         OrderService evcrud = new OrderService();
         ArrayList<Order> ev = (ArrayList<Order>) evcrud.afficher();
         ObservableList<Order> obs = FXCollections.observableArrayList(ev);
@@ -100,7 +146,8 @@ public class AfficherOrderController implements Initializable {
         refe.setCellValueFactory(new PropertyValueFactory<Order,String>("ref_cmde"));
         etat.setCellValueFactory(new PropertyValueFactory<Order,Boolean>("etat_cmde"));
         tel.setCellValueFactory(new PropertyValueFactory<Order,Integer>("tel"));
-      FilteredList<Order> filteredData = new FilteredList<>(FXCollections.observableArrayList(ev), b -> true);
+        product.setCellValueFactory(new PropertyValueFactory<Order,String>("prod"));
+         FilteredList<Order>filteredData = new FilteredList<>(FXCollections.observableArrayList(ev), b -> true);
  	// 2. Set the filter Predicate whenever the filter changes.
 		filterField.textProperty().addListener((observable, oldValue, newValue) -> {
 			filteredData.setPredicate(events -> {
@@ -130,9 +177,77 @@ public class AfficherOrderController implements Initializable {
         personsTable.setItems(sortedData);
 
         // TODO
-    }    
+        //imprimer = new Button ('Export to excel');
+        cnx = DBUtil.getInstance().getCnx();
 
-         @FXML
+        imprimer.setOnAction((actionEvent -> {
+        imprimer.setFont(Font.font("Sansserif", 15));
+        String query = "select * from commande";
+        try {
+
+        Statement pst= cnx.createStatement();
+        ResultSet rs = pst.executeQuery(query);
+
+ 
+        // class to represent excel file format
+        XSSFWorkbook wb = new XSSFWorkbook();
+        XSSFSheet sheet = wb.createSheet("Order Details");
+        XSSFRow header = sheet.createRow(0);
+        header.createCell(0).setCellValue("ID");
+        header.createCell(1).setCellValue("ref");
+        header.createCell(2).setCellValue("etat");
+        header.createCell(3).setCellValue("pays");
+        header.createCell(4).setCellValue("region");
+        header.createCell(5).setCellValue("tel");
+        header.createCell(6).setCellValue("code postal");
+
+        sheet.autoSizeColumn(1);
+        sheet.autoSizeColumn(2);
+        sheet.setColumnWidth(3, 256*25);//256-character width
+
+        sheet.setZoom(150); //scale(150%
+
+        int index = 1;
+        while (rs.next()) {
+            XSSFRow row = sheet.createRow(index);
+            row.createCell(0).setCellValue(rs.getString("id"));
+            row.createCell(1).setCellValue(rs.getString("ref_cmde"));
+            row.createCell(2).setCellValue(rs.getString("etat_cmde"));
+            row.createCell(3).setCellValue(rs.getString("pays"));
+            row.createCell(4).setCellValue(rs.getString("region"));
+            row.createCell(5).setCellValue(rs.getString("tel"));
+            row.createCell(6).setCellValue(rs.getString("code_postal"));
+            index++;
+
+        }
+        
+          String file_name = "order.xlsx";
+
+        FileOutputStream fileOut = new FileOutputStream (file_name);
+        wb.write(fileOut);
+        fileOut.close();
+
+
+        } catch (SQLException ex) {
+            System.out.println("error");
+        } catch (IOException ex) {
+            System.out.println("error");
+        }
+          Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Order details exported to excel Sheet");
+        alert.show();
+        //pst.close();
+        //rs.close();
+
+        }));
+
+       
+
+    }  
+    
+    @FXML
     private void deco(MouseEvent event) {
     }
 
@@ -256,6 +371,14 @@ public class AfficherOrderController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(AfficherOrderController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void calcul(ActionEvent event) {
+        
+        OrderService ec = new OrderService();
+        String s = ec.countOrder();
+        cal.setText(s);
     }
 
   
