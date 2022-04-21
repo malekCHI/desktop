@@ -60,8 +60,6 @@ public class AffichageBackController implements Initializable {
     private TableColumn<Reclamation, Date> tfDateR;
     @FXML
     private Button supp;
-    @FXML
-    private Button mod;
     
     @FXML
     private AnchorPane slider;
@@ -74,8 +72,13 @@ public class AffichageBackController implements Initializable {
     private TableView<Reclamation> tbl_event;
     @FXML
     private TextField filterField;
-     public static String nom_recup;
-    public static String decriptionrecup;
+     public static String renom;
+    public static String redescription;
+    public static String restatus;
+    public static String reref;
+
+    @FXML
+    private Button mod1;
     
 
     /**
@@ -87,21 +90,22 @@ public class AffichageBackController implements Initializable {
         ArrayList<Reclamation> ev = (ArrayList<Reclamation>) evcrud.afficherBack();
         ObservableList<Reclamation> obs = FXCollections.observableArrayList(ev);
         //table.setItems(obs);
-      //  tfClients.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("nom_event"));
-      //  tfCommand.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("ref_cmde"));
-        tfTitre.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("title"));
+        tfClients.setCellValueFactory(new PropertyValueFactory<Reclamation, String>(""));
+        tfClients.setCellValueFactory(new PropertyValueFactory<Reclamation, String>(""));
+       // tfCommand.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("ref_cmde"));
         tfDes.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("description"));
-        tfStat.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("status"));
-        
         tfDateC.setCellValueFactory(new PropertyValueFactory<Reclamation,Date>("create_date"));
         tfDateR.setCellValueFactory(new PropertyValueFactory<Reclamation,Date>("create_resolution"));
+        tfTitre.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("title"));
+        tfStat.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("status"));
+        
         
         
          
      
  FilteredList<Reclamation> filteredData = new FilteredList<>(FXCollections.observableArrayList(ev), b -> true);
  	// 2. Set the filter Predicate whenever the filter changes.
-		/*filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+		filterField.textProperty().addListener((observable, oldValue, newValue) -> {
 			filteredData.setPredicate(events -> {
 				// If filter text is empty, display all persons.
 								
@@ -112,16 +116,16 @@ public class AffichageBackController implements Initializable {
 				// Compare first name and last name of every person with filter text.
 				String lowerCaseFilter = newValue.toLowerCase();
 				
-				if (events.getNom_event().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+				if (events.getTitle().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
 					return true; // Filter matches first name.
-				} else if (events.getObjectif().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+				} else if (events.getDescription().toLowerCase().indexOf(lowerCaseFilter) != -1) {
 					return true; // Filter matches last name.
 				}
 				
 				     else  
 				    	 return false; // Does not match.
 			});
-		});*/
+		});
 		
 		// 3. Wrap the FilteredList in a SortedList. 
 		SortedList<Reclamation> sortedData = new SortedList<>(filteredData);
@@ -145,27 +149,8 @@ public class AffichageBackController implements Initializable {
         tbl_event.refresh();
     }
 
-    @FXML
-    private void modifier(ActionEvent Reclamation) {
-        Reclamation ev = tbl_event.getSelectionModel().getSelectedItem();
-        AffichageBackController.nom_recup=ev.getTitle();
-        AffichageBackController.decriptionrecup=ev.getDescription();
-    //    AffichageBackController.refrecup=ev.get();
-       
-
-        System.out.println(ev.getId());
-         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/EditReclamation.fxml"));
-            Stage stage = (Stage) mod.getScene().getWindow();
-            stage.close();
-            Scene scene = new Scene(root);
-            
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(AffichageBackController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    
+    
 
     @FXML
     private void form(MouseEvent event) {
@@ -182,6 +167,33 @@ public class AffichageBackController implements Initializable {
     @FXML
     private void stat(MouseEvent event) {
     }
+
+    @FXML
+    private void respond(ActionEvent Reclamation) {
+        
+        Reclamation ev = tbl_event.getSelectionModel().getSelectedItem();
+        AffichageBackController.renom=ev.getTitle();
+        AffichageBackController.redescription=ev.getDescription();
+        AffichageBackController.restatus=ev.getStatus();
+
+    //    AffichageBackController.refrecup=ev.get();
+       
+
+        System.out.println(ev.getId());
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/Répondre.fxml"));
+            Stage stage = (Stage) mod1.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AffichageBackController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
     
 }
 

@@ -27,9 +27,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import tn.esprit1.entities.Commande;
-import tn.esprit1.entities.Reclamation;
-import tn.esprit1.services.ReclamationService;
+import tn.esprit1.entities.Communication;
+import tn.esprit1.services.CommunicationService;
 import tn.esprit1.utils.DataSource1;
 import tn.esprit1.utils.DataValidationUtils;
 
@@ -38,12 +37,10 @@ import tn.esprit1.utils.DataValidationUtils;
  *
  * @author oasis
  */
-public class Ajouter_reclamationController implements Initializable {
+public class ajouter_messageController implements Initializable {
 
     @FXML
     private AnchorPane show;
-    @FXML
-    private TextField nom;
     @FXML
     private Text ftTitle;
     @FXML
@@ -51,49 +48,63 @@ public class Ajouter_reclamationController implements Initializable {
     @FXML
     private Text ftcmde_ref;
     @FXML
-    private Button consulter;
+    private Button add;
+    @FXML
+    private Button list;
     @FXML
     private AnchorPane slider;
     @FXML
     private Label Menu;
     @FXML
     private Label MenuClose;
-    Connection cnx = DataSource1.getInstance().getCnx();
-     ReclamationService rs = ReclamationService.getInstance();
+     Connection cnx = DataSource1.getInstance().getCnx();
+     CommunicationService rs = CommunicationService.getInstance();
     @FXML
-    private TextArea des;
+    private TextField titre_message;
     @FXML
-    private TextField refe;
+    private TextArea message;
     @FXML
-    private Button ajouter;
+    private TextField address;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+        // TODO
     }    
 
     @FXML
-    private void ajouter_reclamation(ActionEvent Reclamation) {
-         if (nom.getText().isEmpty() || des.getText().isEmpty()) {
-             nom.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
-             des.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+    private void Add_Message(ActionEvent Communication) {
+        if (titre_message.getText().isEmpty() || message.getText().isEmpty()) {
+             titre_message.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+             message.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
                System.out.println("Fields Are Empty");
                Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information Dialog");
                 alert.setHeaderText(null);
                 alert.setContentText("Fill your fields !");
                 alert.show(); 
+                  }
+             /* else
+                 if (!DataValidationUtils.ValidAddress(address.getText().replaceAll("\\s", ""))) {
+                address.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+                System.out.println("phone is invalid");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.setContentText("ivalid phone !");
+                alert.show();    
+             }*/
                
-    }else{
-            String ttle = nom.getText();
-            String Des = des.getText();
-            
+    else{
+            String tr = titre_message.getText();
+            String me = message.getText();
+          //  String ad = address.getText();
+
             ZoneId defaultZoneId = ZoneId.systemDefault();
-            Reclamation ev = new Reclamation(ttle, Des);
-            rs.ajouterPst(ev);
+            Communication ev = new Communication(tr,me);
+            rs.ajouterC(ev);
             System.err.println("Added Seccessfully");
            
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -101,26 +112,18 @@ public class Ajouter_reclamationController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Reclamation added successfuly!");
                 alert.show();
-                nom.setText("");
-                des.setText("");
-               /* try {
-                    Parent parent = FXMLLoader.load(getClass().getResource("/view/orderAfficheFront.fxml"));
-                    Scene scene = new Scene(parent);
-                    Stage stage = (Stage) ((Node)Order.getSource()).getScene().getWindow();
-                    stage.setScene(scene);
-                   
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }*/
+                titre_message.setText("");
+                message.setText("");
+             //   address.setText("");
 
-            }
+    }
     }
 
     @FXML
-    private void consulter_reclamation(ActionEvent Reclamation) {
+    private void ListOfMessage(ActionEvent Communication) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/affichageFrontt.fxml"));
-            Stage stage = (Stage) consulter.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/view/ListMessage.fxml"));
+            Stage stage = (Stage) list.getScene().getWindow();
             stage.close();
             Scene scene = new Scene(root);
             
@@ -130,7 +133,6 @@ public class Ajouter_reclamationController implements Initializable {
             Logger.getLogger(Ajouter_reclamationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
 
     @FXML
     private void form(MouseEvent event) {
@@ -147,8 +149,5 @@ public class Ajouter_reclamationController implements Initializable {
     @FXML
     private void stat(MouseEvent event) {
     }
-
-   
-   
     
 }

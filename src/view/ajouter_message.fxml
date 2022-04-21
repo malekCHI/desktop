@@ -13,9 +13,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditReclamationController">
+<AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ajouter_messageController">
    <children>
-      <Text fill="#3e6fae" layoutX="282.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Reclamation" textAlignment="CENTER" wrappingWidth="213.69842529296875">
+      <Text fill="#3e6fae" layoutX="275.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a Message" textAlignment="CENTER" wrappingWidth="213.69842529296875">
          <font>
             <Font name="Arial Bold Italic" size="24.0" />
          </font></Text>
@@ -23,16 +23,20 @@
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font></Text>
-      <Text fx:id="ftDescription" fill="#3e6fae" layoutX="254.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER">
+      <Text fx:id="ftDescription" fill="#3e6fae" layoutX="243.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font></Text>
-      <Text fx:id="ftcmde_ref" fill="#3e6fae" layoutX="252.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Command Reference " textAlignment="CENTER">
+      <Text fx:id="ftcmde_ref" fill="#3e6fae" layoutX="252.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Address" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font></Text>
       <Text fill="#3e6fae" layoutX="466.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
-      <Button fx:id="consulter" layoutX="580.0" layoutY="570.0" mnemonicParsing="false" onAction="#modifierRec" prefHeight="25.0" prefWidth="75.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Modifier " textFill="WHITE">
+      <Button fx:id="add" layoutX="556.0" layoutY="563.0" mnemonicParsing="false" onAction="#Add_Message" prefHeight="25.0" prefWidth="75.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="list" layoutX="663.0" layoutY="563.0" mnemonicParsing="false" onAction="#ListOfMessage" prefHeight="25.0" prefWidth="75.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="your list" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
@@ -159,14 +163,8 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <TextField id="prenomText" fx:id="nom" layoutX="468.0" layoutY="209.0" promptText="Enter your Title" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
-      <TextArea fx:id="des" layoutX="468.0" layoutY="284.0" prefHeight="200.0" prefWidth="200.0" promptText="Enter your Description" />
-      <TextField id="prenomText" fx:id="refe" layoutX="468.0" layoutY="499.0" prefHeight="33.0" prefWidth="200.0" promptText="Enter your Reference" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="back" layoutX="493.0" layoutY="570.0" mnemonicParsing="false" onAction="#BackToList" prefHeight="25.0" prefWidth="75.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Back" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
+      <TextField id="prenomText" fx:id="titre_message" layoutX="468.0" layoutY="209.0" promptText="Enter Title" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextArea fx:id="message" layoutX="468.0" layoutY="284.0" prefHeight="200.0" prefWidth="200.0" promptText="Message" />
+      <TextField id="prenomText" fx:id="address" layoutX="468.0" layoutY="499.0" prefHeight="33.0" prefWidth="200.0" promptText="Enter Address" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
    </children>
 </AnchorPane>

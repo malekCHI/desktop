@@ -6,8 +6,13 @@
 
 package pidevjavaa;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import tn.esprit1.services.ReclamationService;
 import tn.esprit1.utils.DataSource1;
@@ -17,18 +22,23 @@ import tn.esprit1.utils.DataSource1;
  * @author oasis
  */
 public class affichmain extends Application {
-    public static void main(String[] args) throws SQLException {
-        DataSource1 source = DataSource1.getInstance();
-        ReclamationService ps = new ReclamationService();
-       // Reclamation p = new Reclamation("demande","jjjjjj");
-        //ps.ajouterPst(p);
-      //  System.out.println(ps.afficher());
-        System.out.println(ps.afficherBack());
-       
-    }
-
+    private Stage primaryStage;
+private Parent parentPage;
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void start(Stage primaryStage) throws IOException {
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("Hello World");
+        
+        parentPage = FXMLLoader.load(getClass().getResource("/view/AffichageBack.fxml"));
+        Scene scene = new Scene(parentPage);
+        this.primaryStage.setScene(scene);
+        this.primaryStage.show();
     }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+   
 }

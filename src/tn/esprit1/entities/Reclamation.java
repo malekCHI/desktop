@@ -47,6 +47,17 @@ public class Reclamation {
         this.id=id;
     }
 
+    public Reclamation(String Title, String Description, String Status) {
+        this.Title = Title;
+        this.Description = Description;
+        this.Status = Status;
+    }
+
+    public Reclamation(String Status) {
+        this.Status = Status;
+    }
+    
+
         public Reclamation(String Title, String Description , String Status,Timestamp create_date, Timestamp create_resolution,Commande cmde) {
             this.Title = Title;
             this.Description = Description;

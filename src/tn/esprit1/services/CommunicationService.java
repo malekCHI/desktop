@@ -23,48 +23,57 @@ import tn.esprit1.utils.DataSource1;
  * @author oasis
  */
 public class CommunicationService {
+
+    public static CommunicationService getInstance() {
+        if(instance == null){
+            instance = new CommunicationService();
+        }
+        return instance;
+    }
     private Connection cnx;
     private Statement ste;
     private PreparedStatement pst;
+    private static CommunicationService instance;
+
 
     public CommunicationService() {
         //Récupération de la connection à la base de données
         cnx = DataSource1.getInstance().getCnx();
     }
+    public void ajouterC(Communication c) {
+        String requete = "INSERT INTO `communication` (`title`,`message`) VALUES (?,?);";
+        
+        try {
+            pst = cnx.prepareStatement(requete);
+            pst.setString(1, c.getTitle());
+            pst.setString(2, c.getMessage());
+          
+            pst.executeUpdate();
+            System.out.println("communication ajoutée");
+        } catch (SQLException ex) {
+            Logger.getLogger(CommunicationService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public void modifierC(Communication c){
-        String req="update communication set title=? ,message =? , sender_id=? where id=? ";
+        String req="update communication set title=? ,message =?  where id=? ";
         try {
             pst=cnx.prepareStatement(req);
             
             pst.setString(1, c.getTitle());
             pst.setString(2, c.getMessage());
            
-            pst.setString(3,c.getSender_id());
+          //  pst.setString(3,c.getSender_id());
   
-            pst.setInt(4,c.getId());
+            pst.setInt(3,c.getId());
            
             pst.executeUpdate();
             
         } catch (SQLException ex) {
-            Logger.getLogger(ReclamationService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CommunicationService.class.getName()).log(Level.SEVERE, null, ex);
           
         }
         
         
-    }
-    public void ajouterC(Communication c) {
-        String requete = "INSERT INTO `communication` (`Title`,`message`,'sender_id') VALUES (?,?,?);";
-        
-        try {
-            pst = cnx.prepareStatement(requete);
-            pst.setString(1, c.getTitle());
-            pst.setString(2, c.getMessage());
-             pst.setString(3,c.getSender_id());
-            pst.executeUpdate();
-            System.out.println("communication ajoutée");
-        } catch (SQLException ex) {
-            Logger.getLogger(CommunicationService.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
     
     public List<Communication> afficher(){
@@ -76,7 +85,7 @@ public class CommunicationService {
             ResultSet rs =  ste.executeQuery(requete);
             
             while(rs.next()){              
-                communications.add(new Communication(rs.getString("Title"), rs.getString("message"),rs.getString("sender_id")));
+                communications.add(new Communication(rs.getString("Title"), rs.getString("message")));
             }           
         } catch (SQLException ex) {
             Logger.getLogger(ReclamationService.class.getName()).log(Level.SEVERE, null, ex);
@@ -86,17 +95,17 @@ public class CommunicationService {
 
     
 
-    public void supprimer(Communication t) {
-        String req="delete from communication where id=? ";
+    public void supprimer(String t) {
+        String req="delete from communication where title='" + t + "'";
             System.out.println("communication supprimé");
           
                 try {
             pst=cnx.prepareStatement(req);
-            pst.setInt(1, t.getId());
+           
             pst.executeUpdate();    
                 }
             catch (SQLException ex) {
-                Logger.getLogger(ReclamationService.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CommunicationService.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 }

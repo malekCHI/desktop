@@ -17,34 +17,29 @@ public class Communication {
     private String Title;
     private String message;
     private Date created_at;
-    private String sender_id;
-    private String recipient_id;
+    
     public Communication() {
     }
 
-    public Communication(int id, String Title, String messsage, Date created_at, String sender_id, String recipient_id) {
+    public Communication(String Title, String message) {
+        this.Title = Title;
+        this.message = message;
+    }
+
+    public Communication(int id, String Title, String message, Date created_at) {
         this.id = id;
         this.Title = Title;
         this.message = message;
         this.created_at = created_at;
-        this.sender_id = sender_id;
-        this.recipient_id = recipient_id;
+       
     }
 
-    public Communication(String Title, String messsage, Date created_at, String sender_id, String recipient_id) {
+    public Communication(String Title, String message, Date created_at) {
         this.Title = Title;
         this.message = message;
         this.created_at = created_at;
-        this.sender_id = sender_id;
-        this.recipient_id = recipient_id;
+       
     }
-
-    public Communication(String Title, String message, String sender_id) {
-        this.Title = Title;
-        this.message = message;
-        this.sender_id = sender_id;
-    }
-    
 
     public int getId() {
         return id;
@@ -77,25 +72,11 @@ public class Communication {
         this.created_at = created_at;
     }
 
-    public String getSender_id() {
-        return sender_id;
-    }
-
-    public void setSender_id(String sender_id) {
-        this.sender_id = sender_id;
-    }
-
-    public String getRecipient_id() {
-        return recipient_id;
-    }
-
-    public void setRecipient_id(String recipient_id) {
-        this.recipient_id = recipient_id;
-    }
+   
 
     @Override
     public String toString() {
-        return "Communication{" + "id=" + id + ", Title=" + Title + ", messsage=" + message + ", created_at=" + created_at + ", sender_id=" + sender_id + ", recipient_id=" + recipient_id + '}';
+        return "Communication{" + "id=" + id + ", Title=" + Title + ", messsage=" + message + ", created_at=" + created_at +'}';
     }
 
     

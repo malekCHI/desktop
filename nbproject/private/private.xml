@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/oasis/Documents/NetBeansProjects/PiDevJavaa/src/controller/AffichageBackController.java</file>
-            <file>file:/C:/Users/oasis/Documents/NetBeansProjects/PiDevJavaa/src/tn/esprit1/entities/Communication.java</file>
-            <file>file:/C:/Users/oasis/Documents/NetBeansProjects/PiDevJavaa/src/tn/esprit1/services/CommunicationService.java</file>
-            <file>file:/C:/Users/oasis/Documents/NetBeansProjects/PiDevJavaa/src/controller/Ajouter_reclamationController.java</file>
+            <file>file:/C:/Users/oasis/Documents/NetBeansProjects/PiDevJavaa/src/controller/AffichageFronttController.java</file>
+            <file>file:/C:/Users/oasis/Documents/NetBeansProjects/PiDevJavaa/src/controller/Edit_MessageController.java</file>
+            <file>file:/C:/Users/oasis/Documents/NetBeansProjects/PiDevJavaa/src/controller/EditReclamationController.java</file>
+            <file>file:/C:/Users/oasis/Documents/NetBeansProjects/PiDevJavaa/src/controller/ListMessageController.java</file>
         </group>
     </open-files>
 </project-private>

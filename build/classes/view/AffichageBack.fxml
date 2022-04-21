@@ -13,24 +13,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AffichageBackController">
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: blackk;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AffichageBackController">
    <children>
-      <TableView fx:id="tbl_event" layoutX="260.0" layoutY="194.0" opacity="0.73" prefHeight="302.0" prefWidth="980.0">
+      <TableView fx:id="tbl_event" layoutX="251.0" layoutY="274.0" opacity="0.73" prefHeight="302.0" prefWidth="965.0">
          <columns>
             <TableColumn fx:id="tfClients" prefWidth="160.99996948242188" text="Clients" />
             <TableColumn fx:id="tfCommand" prefWidth="176.0" text="Command's Reference " />
-            <TableColumn fx:id="tfTitre" prefWidth="95.20001220703125" text="Title " />
             <TableColumn fx:id="tfDes" prefWidth="132.800048828125" text="Description" />
-            <TableColumn fx:id="tfStat" prefWidth="132.800048828125" text="Status" />
             <TableColumn fx:id="tfDateC" prefWidth="132.800048828125" text="Creation Date " />
             <TableColumn fx:id="tfDateR" prefWidth="132.800048828125" text="Resolution Date" />
+            <TableColumn fx:id="tfTitre" prefWidth="95.20001220703125" text="Title " />
+            <TableColumn fx:id="tfStat" prefWidth="132.800048828125" text="Status" />
          </columns>
       </TableView>
-      <Button fx:id="supp" layoutX="883.0" layoutY="533.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="103.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Supprimer" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Button>
-      <Button fx:id="mod" layoutX="1044.0" layoutY="533.0" mnemonicParsing="false" onAction="#modifier" prefHeight="26.0" prefWidth="103.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Modifier" textFill="#fffefe">
+      <Button fx:id="supp" layoutX="917.0" layoutY="611.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="103.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Supprimer" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
@@ -158,6 +154,16 @@
          </children>
       </AnchorPane>
       <HBox prefHeight="100.0" prefWidth="200.0" />
-      <TextField fx:id="filterField" layoutX="369.0" layoutY="116.0" />
+      <TextField fx:id="filterField" layoutX="323.0" layoutY="212.0" promptText="Search" />
+      <Button fx:id="mod1" layoutX="1039.0" layoutY="611.0" mnemonicParsing="false" onAction="#respond" prefHeight="26.0" prefWidth="103.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Répondre" textFill="#fffefe">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="279.0" layoutY="137.0" prefHeight="29.0" prefWidth="212.0" text="List Reclamation" textFill="#3e6fae">
+         <font>
+            <Font name="Arial Bold Italic" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

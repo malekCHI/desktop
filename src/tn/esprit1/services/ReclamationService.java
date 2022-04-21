@@ -67,7 +67,7 @@ public class ReclamationService {
             pst = cnx.prepareStatement(requete);
             pst.setString(1, p.getTitle());
             pst.setString(2, p.getDescription());
-//            pst.setInt(3, p.getCmde().getId());
+           // pst.setInt(3, p.getCmde().getId());
           pst.executeUpdate();
             System.out.println("réclamation ajoutée");
         } catch (SQLException ex) {
@@ -141,14 +141,49 @@ public class ReclamationService {
             Logger.getLogger(ReclamationService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }*/
-    
+    public void ajouterStatus(Reclamation p) {
+        String requete = "INSERT INTO `reclamation` (`status`,`Title`,`Description`) VALUES (?,?,?);";
+        
+        try {
+            pst = cnx.prepareStatement(requete);
+            pst.setString(1, p.getStatus());
+            pst.setString(2, p.getTitle());
+            pst.setString(3, p.getDescription());
+            
+//            pst.setInt(3, p.getCmde().getId());
+          pst.executeUpdate();
+            System.out.println("status ajoutée");
+        } catch (SQLException ex) {
+            Logger.getLogger(ReclamationService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     public static ReclamationService getInstance() {
         if(instance == null){
             instance = new ReclamationService();
         }
         return instance;
-    }  
+    } 
+    public void modifierStatus(Reclamation t){
+        String req="update reclamation set title=? ,description =?,status =?  where id=? ";
+        try {
+            pst=cnx.prepareStatement(req);
+            
+            pst.setString(1, t.getTitle());
+            pst.setString(2,t.getDescription());
+             pst.setString(3,t.getStatus());
+            
+            pst.setInt(4,t.getId());
+          
+
+           
+            pst.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ReclamationService.class.getName()).log(Level.SEVERE, null, ex);
+          
+        }
    
     }
+}
 

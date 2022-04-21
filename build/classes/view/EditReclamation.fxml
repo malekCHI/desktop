@@ -15,7 +15,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditReclamationController">
    <children>
-      <Text fill="#3e6fae" layoutX="275.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Reclamation" textAlignment="CENTER" wrappingWidth="213.69842529296875">
+      <Text fill="#3e6fae" layoutX="282.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Reclamation" textAlignment="CENTER" wrappingWidth="213.69842529296875">
          <font>
             <Font name="Arial Bold Italic" size="24.0" />
          </font></Text>
@@ -160,7 +160,13 @@
          </children>
       </AnchorPane>
       <TextField id="prenomText" fx:id="nom" layoutX="468.0" layoutY="209.0" promptText="Enter your Title" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
-      <TextField id="prenomText" fx:id="refe" layoutX="468.0" layoutY="498.0" promptText="Enter reference" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
       <TextArea fx:id="des" layoutX="468.0" layoutY="284.0" prefHeight="200.0" prefWidth="200.0" promptText="Enter your Description" />
+      <TextField id="prenomText" fx:id="refe" layoutX="468.0" layoutY="499.0" prefHeight="33.0" prefWidth="200.0" promptText="Enter your Reference" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="back" layoutX="493.0" layoutY="570.0" mnemonicParsing="false" onAction="#BackToList" prefHeight="25.0" prefWidth="75.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
