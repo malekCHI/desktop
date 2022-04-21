@@ -23,6 +23,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -66,10 +67,6 @@ public class ListOfProductController implements Initializable {
     @FXML
     private TableColumn<Product, Integer> priceProd;
     @FXML
-    private TableColumn<Product, Integer> id;
-    @FXML
-    private Button supp;
-    @FXML
     private Button mod;
     @FXML
     private TextField filterFieldProd;
@@ -93,9 +90,19 @@ public class ListOfProductController implements Initializable {
     @FXML
     private ImageView iconCat;
     @FXML
+    private TextField nbrProd;
+    @FXML
+    private Label stat;
+    @FXML
+    private ImageView iconStat;
+    @FXML
+    private TableColumn<?, ?> id;
+    @FXML
+    private Button supp;
+    @FXML
     private Button Sum;
     @FXML
-    private TextField nbrProd;
+    private Label MenuClosefront1;
 
     /**
      * Initializes the controller class.
@@ -322,11 +329,67 @@ public class ListOfProductController implements Initializable {
         nbrProd.setText(s);
     }
 
+
+    @FXML
+    private void btnStat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/PieChartView.fxml"));
+            Stage stage = (Stage) stat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconBtnStat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/PieChartView.fxml"));
+            Stage stage = (Stage) iconStat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     @FXML
     private void calculer(MouseEvent event) {
     }
 
+    @FXML
+    private void btnFront(MouseEvent event) {
+         Product ev = tableProd.getSelectionModel().getSelectedItem();
+        ListOfProductController.ref_recup=ev.getReference();
+        ListOfProductController.productnamerecup=ev.getProductName();
 
+        ListOfProductController.decriptionrecup=ev.getDescription();
+        
+        ListOfProductController.pricerecup=ev.getPrice();
+        ListOfProductController.stockrecup=ev.getStock();
+
+        ListOfProductController.id_rec=ev.getId();
+
+        System.out.println(ev.getId());
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/Front.fxml"));
+            Stage stage = (Stage) mod.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     
 }

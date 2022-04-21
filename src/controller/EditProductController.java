@@ -131,6 +131,9 @@ public class EditProductController implements Initializable {
         ServiceProduct pr=ServiceProduct.getInstance();
             pr.modifierProduct(prom); 
         showMessageDialog(null, "update with succese");
+        
+        
+        
     }
 
     @FXML

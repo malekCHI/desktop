@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #F5FFFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListProdFrontController">
+   <children>
+      <AnchorPane prefHeight="70.0" prefWidth="1366.0">
+         <children>
+            <AnchorPane prefHeight="70.0" prefWidth="1359.0" style="-fx-background-color: #B0C4DE;">
+               <children>
+                  <Pane layoutX="181.0" layoutY="20.0" prefHeight="25.0" prefWidth="1366.0" style="-fx-background-color: #008080;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0" />
+                  <HBox layoutX="200.0" layoutY="-17.0" prefHeight="40.0" prefWidth="1087.0" style="-fx-background-color: #B0C4DE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                     <children>
+                        <HBox prefHeight="46.0" prefWidth="423.0">
+                           <children>
+                              <HBox onMouseClicked="#form" prefHeight="60.0" prefWidth="216.0" styleClass="menuItem" stylesheets="@../style/style.css" />
+                              <HBox prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css" />
+                              <HBox onMouseClicked="#abon" prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css" />
+                              <HBox onMouseClicked="#stat" prefHeight="45.0" prefWidth="305.0" styleClass="menuItem" stylesheets="@../style/style.css" />
+                           </children>
+                        </HBox>
+                        <Label prefHeight="40.0" prefWidth="123.0" text="Products" textFill="INDIGO">
+                           <font>
+                              <Font name="DecoType Thuluth" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="-4.0" layoutY="23.0" prefHeight="750.0" prefWidth="26.0" style="-fx-background-color: #008080;" />
+      <Pane layoutX="1340.0" layoutY="23.0" prefHeight="750.0" prefWidth="26.0" style="-fx-background-color: #008080;" />
+      <TableView fx:id="tableView" layoutX="262.0" layoutY="228.0" prefHeight="200.0" prefWidth="869.0" style="-fx-background-color: white;">
+        <columns>
+          <TableColumn fx:id="nameF" prefWidth="191.0" style="-fx-background-color: white;" text="Name" />
+          <TableColumn fx:id="priceF" prefWidth="213.0" style="-fx-background-color: white;" text="Price" />
+            <TableColumn fx:id="descF" prefWidth="464.0" style="-fx-background-color: white;" text="Description" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

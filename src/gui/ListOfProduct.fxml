@@ -63,7 +63,7 @@
                               <Image url="@../img/iii.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="60.0" prefWidth="95.0" text="Statistics" textFill="WHITE" />
+                        <Label fx:id="stat" onMouseClicked="#btnStat" prefHeight="60.0" prefWidth="95.0" text="Statistics" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>
@@ -111,7 +111,7 @@
                               </HBox>
                               <HBox onMouseClicked="#stat" prefHeight="45.0" prefWidth="305.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
-                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="iconStat" fitHeight="45.0" fitWidth="47.0" onMouseClicked="#iconBtnStat" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../img/stat2.png" />
                                        </image>
@@ -179,5 +179,6 @@
          </font>
       </Button>
       <TextField fx:id="nbrProd" layoutX="1094.0" layoutY="181.0" prefHeight="20.0" prefWidth="130.0" />
+      <Label fx:id="MenuClosefront1" layoutX="245.0" layoutY="732.0" onMouseClicked="#btnFront" prefHeight="36.0" prefWidth="96.0" text="Front" />
    </children>
 </AnchorPane>

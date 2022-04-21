@@ -3,23 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package allintravelfinal.controller.client.car;
+package gui;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
  *
  * @author maryem
  */
-public class DisplayImageControllerRent implements Initializable {
+public class ListFrontController implements Initializable {
 
     @FXML
-    private ImageView DisplayImage;
+    private Label label;
+    @FXML
+    private Button button;
+    @FXML
+    private Label idf;
+    @FXML
+    private Label fxprix;
+    @FXML
+    private ImageView backB;
 
     /**
      * Initializes the controller class.
@@ -28,5 +40,13 @@ public class DisplayImageControllerRent implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void handleButtonAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void backToBack(MouseEvent event) {
+    }
     
 }
