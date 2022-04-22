@@ -12,7 +12,7 @@ package entities;
 public class Product {
     private int id;
     private String reference;
-    private String ProductName;
+    private String product_name;
     private String description;
     private String image;
     private int price;
@@ -26,7 +26,7 @@ public class Product {
     public Product(int id,String reference, String ProductName, String description,String image, int price, int stock, Category category) {
         this.id = id;
         this.reference = reference;
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
         this.description = description;
         this.image = image;
         this.price = price;
@@ -35,19 +35,19 @@ public class Product {
     }
     
     public Product(String ProductName) {
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
       
     }
 
     public Product(int id, String ProductName, String description) {
         this.id = id;
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
         this.description = description;
       
     }
 
     public Product(String ProductName, String description) {
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
         this.description = description;
     }
 
@@ -56,7 +56,7 @@ public class Product {
 
     }
     public Product( String ProductName, String description,int id) {
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
         this.description = description;
         this.id = id;
 
@@ -64,7 +64,7 @@ public class Product {
     }
      public Product(String reference, String ProductName, String description,String image, int price, int stock, Category category) {
         this.reference = reference;
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
         this.description = description;
         this.image = image;
         this.price = price;
@@ -75,7 +75,7 @@ public class Product {
 
     public Product(String reference, String ProductName, String description,String image, int price, int stock, String string3, String string4, Category c) {
        this.reference = reference;
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
         this.description = description;
         this.image = image;
         this.price = price;
@@ -85,7 +85,7 @@ public class Product {
 
     public Product(String reference, String ProductName, String description, int price, int stock) {
         this.reference = reference;
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
         this.description = description;
         this.price = price;
         this.stock = stock;
@@ -93,7 +93,7 @@ public class Product {
 
     public Product(String reference, String ProductName, String description, int price, int stock, String image,int cat) {
         this.reference = reference;
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
         this.description = description;
         this.price = price;
         this.stock = stock;
@@ -157,11 +157,11 @@ public class Product {
     }
 
     public String getProductName() {
-        return ProductName;
+        return product_name;
     }
 
     public void setProductName(String ProductName) {
-        this.ProductName = ProductName;
+        this.product_name = ProductName;
     }
 
     public String getDescription() {
@@ -190,8 +190,12 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", reference=" + reference + ", ProductName=" + ProductName + ", description=" + description + ", image=" + image + ", price=" + price + ", stock=" + stock + ", category=" + category + '}';
+        return "Product{" + "id=" + id + ", reference=" + reference + ", product_name=" + product_name + ", description=" + description + ", image=" + image + ", price=" + price + ", stock=" + stock + ", category=" + category + ", cat=" + cat + '}';
     }
+
+    
+
+    
 
    
 

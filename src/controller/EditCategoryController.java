@@ -72,6 +72,10 @@ public class EditCategoryController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        txtNameCat.setText(ListOfCategoryController.name_recup);
+        txtDescCat.setText(ListOfCategoryController.decription_recup);
+        
+
         // TODO
     }    
 
@@ -92,12 +96,14 @@ public class EditCategoryController implements Initializable {
     }
 
     @FXML
-    private void editBtnCat(ActionEvent event) throws SQLException {
+    private void editBtnCat(ActionEvent Category) throws SQLException {
         Category prom = new Category();
          //prom.setId(parseInt(ref.getText()));
         prom.setName(txtNameCat.getText());
         prom.setDescription(txtDescCat.getText());
-       
+        
+
+
         System.out.println("yes");
         ServiceCategory pr=ServiceCategory.getInstance();
             pr.modifierCategory(prom); 

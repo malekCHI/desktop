@@ -65,7 +65,7 @@ public class ListOfCategoryController implements Initializable {
     @FXML
     private TableView<Category> tableCat;
     public static String name_recup;
-    public static String decriptionrecup;
+    public static String decription_recup;
     public static int id_rec;
     @FXML
     private Button addCat;
@@ -82,6 +82,7 @@ public class ListOfCategoryController implements Initializable {
     private Button Sum;
     @FXML
     private TextField nbrProd;
+   
 
     /**
      * Initializes the controller class.
@@ -171,8 +172,9 @@ public class ListOfCategoryController implements Initializable {
     private void modifier(ActionEvent Category) {
         Category ev = tableCat.getSelectionModel().getSelectedItem();
         ListOfCategoryController.name_recup=ev.getName();
-        ListOfCategoryController.decriptionrecup=ev.getDescription();       
-       
+        ListOfCategoryController.decription_recup=ev.getDescription();
+
+        
 
         ListOfCategoryController.id_rec=ev.getId();
 
@@ -188,6 +190,7 @@ public class ListOfCategoryController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(ListOfCategoryController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
 
