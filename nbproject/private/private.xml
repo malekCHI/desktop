@@ -11,6 +11,7 @@
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/orderAffiche.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/values/style.css</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/home/HomeView.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/LauncherController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/AjouterOrder.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/item.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/home/home.fxml</file>
@@ -22,13 +23,14 @@
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/Edit_OrderControllerBack.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/App.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/EditOrderFront.fxml</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/Ajouter_OrderControllerBack.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/Cart/cart.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/MarketController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/launcher.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/services/ServiceProduct.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/style/style.css</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/services/OrderService.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/EditOrder.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/utils/DBUtil.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/services/IInterface.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/Market.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/Cart/CartView.java</file>

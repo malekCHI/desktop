@@ -7,12 +7,24 @@ package controller;
 
 import Cart.CartEntry;
 import Cart.ShoppingCart;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Array;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -73,7 +85,6 @@ public class AfficherOrderController implements Initializable {
     private TableView<Order> personsTable;
     @FXML
     private Button ref;
-    @FXML
     private TableColumn<Order, Boolean> etat;
     @FXML
     private TableColumn<Order, Integer> tel;
@@ -94,7 +105,7 @@ public class AfficherOrderController implements Initializable {
     public static int num_order;
     public static String region_order;
     public static String pays_order;
-    public static Boolean etat_order;
+    public static String status_order;
     public static int code_order;
     @FXML
     private Button edit;
@@ -110,16 +121,21 @@ public class AfficherOrderController implements Initializable {
     private Button calcul;
     @FXML
     private TextField cal;
-    @FXML
-    private TableColumn<Order,String> product;
     
     private Connection cnx;
+    @FXML
+    private TableColumn<Order, String> etatcheck;
+    @FXML
+    private Button exportToPdf;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        
+        
         
        /* List<CartEntry> entries = ShoppingCart.getInstance().getEntries();
 
@@ -144,9 +160,8 @@ public class AfficherOrderController implements Initializable {
         ObservableList<Order> obs = FXCollections.observableArrayList(ev);
         //table.setItems(obs);
         refe.setCellValueFactory(new PropertyValueFactory<Order,String>("ref_cmde"));
-        etat.setCellValueFactory(new PropertyValueFactory<Order,Boolean>("etat_cmde"));
         tel.setCellValueFactory(new PropertyValueFactory<Order,Integer>("tel"));
-        product.setCellValueFactory(new PropertyValueFactory<Order,String>("prod"));
+        etatcheck.setCellValueFactory(new PropertyValueFactory<Order,String>("status"));
          FilteredList<Order>filteredData = new FilteredList<>(FXCollections.observableArrayList(ev), b -> true);
  	// 2. Set the filter Predicate whenever the filter changes.
 		filterField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -177,8 +192,12 @@ public class AfficherOrderController implements Initializable {
         personsTable.setItems(sortedData);
 
         // TODO
+        
+        
+        
         //imprimer = new Button ('Export to excel');
         cnx = DBUtil.getInstance().getCnx();
+        
 
         imprimer.setOnAction((actionEvent -> {
         imprimer.setFont(Font.font("Sansserif", 15));
@@ -200,7 +219,7 @@ public class AfficherOrderController implements Initializable {
         header.createCell(4).setCellValue("region");
         header.createCell(5).setCellValue("tel");
         header.createCell(6).setCellValue("code postal");
-
+        header.createCell(6).setCellValue("status");
         sheet.autoSizeColumn(1);
         sheet.autoSizeColumn(2);
         sheet.setColumnWidth(3, 256*25);//256-character width
@@ -217,6 +236,7 @@ public class AfficherOrderController implements Initializable {
             row.createCell(4).setCellValue(rs.getString("region"));
             row.createCell(5).setCellValue(rs.getString("tel"));
             row.createCell(6).setCellValue(rs.getString("code_postal"));
+            row.createCell(6).setCellValue(rs.getString("status"));
             index++;
 
         }
@@ -242,6 +262,106 @@ public class AfficherOrderController implements Initializable {
         //rs.close();
 
         }));
+    
+        exportToPdf.setOnAction(actionEvent -> {
+        cnx = DBUtil.getInstance().getCnx();
+    
+         PreparedStatement pst=null;
+         ResultSet rs=null;
+         
+         String guery = " select * from commande";
+            try {   
+               
+         pst= cnx.prepareStatement(guery);
+         rs= pst.executeQuery();
+         
+                  String file_name = "commande.pdf";
+        Document doc = new Document();
+        PdfWriter.getInstance(doc, new FileOutputStream(file_name));
+        
+        doc.open();
+       
+       Image img = Image.getInstance("C:\\Users\\MSI\\Documents\\NetBeansProjects\\Desktop\\src\\img\\logo 9 (1).png");
+       img.scaleAbsoluteWidth(600);
+       img.scaleAbsoluteHeight(92);
+       img.setAlignment(Image.ALIGN_CENTER);
+       doc.add(img);
+       
+       doc.add(new Paragraph(" "));
+       doc.add(new Paragraph("commande list",FontFactory.getFont(FontFactory.TIMES_BOLD,20,BaseColor.LIGHT_GRAY)));
+       doc.add(new Paragraph(" "));
+
+       PdfPTable table = new PdfPTable(3);
+       table.setWidthPercentage(100);
+
+       PdfPCell cell;
+       
+       cell = new PdfPCell (new Phrase("reference", FontFactory.getFont("Comic Sans MS",12)));
+       cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+       cell.setBackgroundColor(BaseColor.GRAY);
+       table.addCell(cell);
+       
+       cell = new PdfPCell (new Phrase("phone number", FontFactory.getFont("Comic Sans MS",12)));
+       cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+       cell.setBackgroundColor(BaseColor.GRAY);
+       table.addCell(cell);
+       
+       cell = new PdfPCell (new Phrase("status", FontFactory.getFont("Comic Sans MS",12)));
+       cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+       cell.setBackgroundColor(BaseColor.GRAY);
+       table.addCell(cell);
+       
+      // cell = new PdfPCell (new Phrase("Phone", FontFactory.getFont("Comic Sans MS",12)));
+      // cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+       //cell.setBackgroundColor(BaseColor.GRAY);
+       
+       /////////////////////////////////////////////////////////////////////////////////
+       while(rs.next()) {
+           cell = new PdfPCell (new Phrase(rs.getString("ref_cmde").toString(), FontFactory.getFont("Arial",12)));
+       cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        
+       table.addCell(cell);
+       
+       cell = new PdfPCell (new Phrase(rs.getString("tel").toString(), FontFactory.getFont("Arial",12)));
+       cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+      
+       table.addCell(cell);
+       
+       cell = new PdfPCell (new Phrase(rs.getString("etat_cmde").toString(), FontFactory.getFont("Arial",12)));
+       cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+       
+       table.addCell(cell);
+       
+     //  cell = new PdfPCell (new Phrase(rs.getString("phone").toString(), FontFactory.getFont("Arial",12)));
+       //cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+      
+       //table.addCell(cell);
+        
+       }
+      
+       doc.add(table);
+       
+        System.out.println("done");
+                doc.close();
+                
+                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(AfficherOrderController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (DocumentException ex) {
+                Logger.getLogger(AfficherOrderController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(AfficherOrderController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(AfficherOrderController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Commande details exported to PDF Sheet");
+            alert.show();
+
+         });
+
 
        
 
@@ -255,9 +375,6 @@ public class AfficherOrderController implements Initializable {
     private void form(MouseEvent event) {
     }
 
-    @FXML
-    private void abon(MouseEvent event) {
-    }
 
     @FXML
     private void stat(MouseEvent event) {
@@ -338,8 +455,9 @@ public class AfficherOrderController implements Initializable {
         AfficherOrderController.num_order=ev.getTel();
         AfficherOrderController.region_order=ev.getRegion();
         AfficherOrderController.pays_order=ev.getPays();
-        AfficherOrderController.etat_order=ev.getEtat_cmde();
+        AfficherOrderController.status_order=ev.getStatus();
         AfficherOrderController.code_order=ev.getCode_postal();
+        
         
         //AfficherOrderController.id_rec=ev.getId();
 

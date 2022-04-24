@@ -9,6 +9,7 @@ import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +21,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -47,7 +49,6 @@ public class Edit_OrderControllerBack implements Initializable {
     @FXML
     private Text etat1;
 
-    @FXML
     private TextField etatt;
 
 
@@ -57,7 +58,6 @@ public class Edit_OrderControllerBack implements Initializable {
     @FXML
     private Text pays;
 
-    @FXML
     private TextField payss;
 
     @FXML
@@ -75,16 +75,17 @@ public class Edit_OrderControllerBack implements Initializable {
     @FXML
     private AnchorPane show;
 
-    @FXML
-    private AnchorPane slider;
 
     @FXML
     private Text tel;
 
     @FXML
     private Button update;
-    @FXML
     private Label listt;
+    @FXML
+    private ComboBox<String> comboxL;
+    @FXML
+    private ComboBox<String> comboxS;
 
     @FXML
     void form(MouseEvent event) {
@@ -105,7 +106,6 @@ public class Edit_OrderControllerBack implements Initializable {
         }*/
     }
 
-    @FXML
     void promo(MouseEvent event) {
 
     }
@@ -117,15 +117,9 @@ public class Edit_OrderControllerBack implements Initializable {
         Order prom = new Order();
         prom.setRef_cmde(reffe.getText());
         prom.setRegion(regio.getText());
-        prom.setPays(payss.getText());
+        prom.setPays(comboxL.getValue());
         prom.setTel(parseInt(numero.getText()));
-        
-        if(etatt.getText().equals("true")){
-             Etat=true;
-            }else{
-                 Etat=false;
-            }
-        prom.setEtat_cmde(Etat);
+        prom.setStatus(comboxS.getValue());
         prom.setCode_postal(parseInt(codepostal.getText()));
 
         System.out.println("hahahah");
@@ -145,18 +139,42 @@ public class Edit_OrderControllerBack implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+     public void getLocation() {
+        String[] countries = Locale.getISOCountries();
+
+        // Loop each country 
+        for (int i = 0; i < countries.length; i++) {
+
+            String country = countries[i];
+            Locale locale = new Locale("en", country);
+
+            // Get the country name by calling getDisplayCountry()
+            String countryName = locale.getDisplayCountry();
+            // Printing the country name on the console
+            System.out.println(i + 1 + " : " + countryName);
+            comboxL.getItems().addAll(countryName);
+
+        }
+
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        getLocation();
+        comboxS.getItems().addAll(
+            "Confirmed",
+            "Cancled"
+        );
         // TODO
         reffe.setText(AfficherOrderBackController.ref_order);
         numero.setText(String.valueOf(AfficherOrderBackController.num_order));
         regio.setText(AfficherOrderBackController.region_order);
-        payss.setText(AfficherOrderBackController.pays_order);
-        etatt.setText(String.valueOf(AfficherOrderBackController.etat_order));
+        comboxL.setValue(AfficherOrderBackController.pays_order);
+        comboxS.setValue(String.valueOf(AfficherOrderBackController.status_order));
         codepostal.setText(String.valueOf(AfficherOrderBackController.code_order));
     }    
 
-    @FXML
     private void listorderclick(MouseEvent event) {
          try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/orderAffiche.fxml"));
@@ -169,6 +187,14 @@ public class Edit_OrderControllerBack implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(AfficherOrderBackController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void abon(MouseEvent event) {
+    }
+
+    @FXML
+    private void stat(MouseEvent event) {
     }
 
 }

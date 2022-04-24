@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Desktop.jar" size="2031477" download="eager" />
+    <jar href="Desktop.jar" size="2036964" download="eager" />
     <jar href="lib\SparseBitSet-1.2.jar" size="24510" download="eager" />
     <jar href="lib\commons-codec-1.15.jar" size="353793" download="eager" />
     <jar href="lib\commons-collections4-4.4.jar" size="751914" download="eager" />
@@ -17,6 +17,9 @@
     <jar href="lib\commons-logging-1.2.jar" size="61829" download="eager" />
     <jar href="lib\commons-math3-3.6.1.jar" size="2213560" download="eager" />
     <jar href="lib\curvesapi-1.06.jar" size="111875" download="eager" />
+    <jar href="lib\itextpdf-5.5.9.jar" size="2287148" download="eager" />
+    <jar href="lib\jfoenix-8.0.1.jar" size="2405715" download="eager" />
+    <jar href="lib\json-20211205.jar" size="70678" download="eager" />
     <jar href="lib\log4j-api-2.17.1.jar" size="301872" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.28.jar" size="2476480" download="eager" />
     <jar href="lib\poi-5.2.0.jar" size="2897386" download="eager" />
@@ -28,6 +31,7 @@
     <jar href="lib\poi-ooxml-lite-5.2.0.jar" size="5787472" download="eager" />
     <jar href="lib\poi-scratchpad-5.2.0.jar" size="1894677" download="eager" />
     <jar href="lib\slf4j-api-1.7.32.jar" size="41513" download="eager" />
+    <jar href="lib\twilio-8.9.0-jar-with-dependencies.jar" size="8358946" download="eager" />
     <jar href="lib\xmlbeans-5.0.3.jar" size="2191828" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Desktop" >

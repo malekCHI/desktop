@@ -29,7 +29,7 @@ public class App extends Application{
 
     @Override
     public void start(Stage stage) throws IOException {
-        URL url = new File("/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/Market.fxml").toURI().toURL();
+        URL url = new File("/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/launcher.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         stage.setTitle("Shopping Cart App");
         stage.setScene(new Scene(root, Color.TRANSPARENT));

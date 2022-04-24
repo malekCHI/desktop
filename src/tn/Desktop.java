@@ -31,7 +31,7 @@ public class Desktop extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("GameX");
         
-        parentPage = FXMLLoader.load(getClass().getResource("/view/Market.fxml"));
+        parentPage = FXMLLoader.load(getClass().getResource("/view/launcher.fxml"));
         Scene scene = new Scene(parentPage);
         this.primaryStage.setScene(scene);
         this.primaryStage.show();

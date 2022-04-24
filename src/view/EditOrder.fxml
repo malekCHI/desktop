@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -14,110 +15,100 @@
 
 <AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Edit_OrderControllerBack">
    <children>
-      <Text fill="#3e6fae" layoutX="269.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit une commande" textAlignment="CENTER" wrappingWidth="213.69842529296875">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="16.0" />
-         </font></Text>
       <TextField fx:id="reffe" layoutX="559.0" layoutY="276.0" prefHeight="34.0" prefWidth="294.0" />
       <TextField fx:id="numero" layoutX="559.0" layoutY="329.0" prefHeight="34.0" prefWidth="294.0" />
-      <TextField fx:id="payss" layoutX="559.0" layoutY="380.0" prefHeight="34.0" prefWidth="294.0" />
       <TextField fx:id="regio" layoutX="559.0" layoutY="430.0" prefHeight="34.0" prefWidth="294.0" />
-      <TextField fx:id="etatt" layoutX="559.0" layoutY="478.0" prefHeight="34.0" prefWidth="294.0" />
       <TextField fx:id="codepostal" layoutX="560.0" layoutY="525.0" prefHeight="34.0" prefWidth="294.0" />
-      <Text fx:id="reff" fill="#3e6fae" layoutX="412.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="reference" textAlignment="CENTER">
+      <Text fx:id="reff" fill="#0a115a" layoutX="412.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reference" textAlignment="CENTER">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font></Text>
-      <Text fx:id="tel" fill="#3e6fae" layoutX="416.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" textAlignment="CENTER">
+      <Text fx:id="tel" fill="#0a115a" layoutX="416.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" textAlignment="CENTER">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font></Text>
-      <Text fx:id="pays" fill="#3e6fae" layoutX="416.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" textAlignment="CENTER">
+      <Text fx:id="pays" fill="#0a115a" layoutX="416.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" textAlignment="CENTER">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font></Text>
-      <Text fx:id="region" fill="#3e6fae" layoutX="419.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Region" textAlignment="CENTER">
+      <Text fx:id="region" fill="#0a115a" layoutX="419.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Region" textAlignment="CENTER">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font></Text>
-      <Text fx:id="etat" fill="#3e6fae" layoutX="416.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER">
+      <Text fx:id="etat" fill="#0a115a" layoutX="416.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font></Text>
-      <Text fx:id="etat1" fill="#3e6fae" layoutX="416.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code postal" textAlignment="CENTER">
+      <Text fx:id="etat1" fill="#0a115a" layoutX="416.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PostCod" textAlignment="CENTER">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font></Text>
-      <Button fx:id="update" layoutX="790.0" layoutY="591.0" mnemonicParsing="false" onAction="#update_orderBack" prefHeight="26.0" prefWidth="114.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="update" textFill="WHITE">
+      <Button fx:id="update" layoutX="790.0" layoutY="591.0" mnemonicParsing="false" onAction="#update_orderBack" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #0A115A;" styleClass="add1-btn" stylesheets="@../style/style.css" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <AnchorPane fx:id="slider" layoutY="68.0" prefHeight="700.0" prefWidth="229.0" style="-fx-background-color: #242B6E;">
-         <children>
-            <VBox layoutX="38.0" layoutY="184.0" prefHeight="632.0" prefWidth="229.0" AnchorPane.bottomAnchor="-53.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
-               <children>
-                  <HBox onMouseClicked="#form" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/dash.png" />
-                           </image>
-                        </ImageView>
-                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="100.0" text="Accueil" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox onMouseClicked="#promo" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/abo.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="listt" alignment="CENTER" onMouseClicked="#listorderclick" prefHeight="54.0" prefWidth="148.0" text="List of orders" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/iii.png" />
-                           </image>
-                        </ImageView>
-                        <Label alignment="CENTER" prefHeight="54.0" prefWidth="122.0" text="Statistique" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
       <AnchorPane prefHeight="70.0" prefWidth="1366.0">
          <children>
             <AnchorPane prefHeight="70.0" prefWidth="1359.0" style="-fx-background-color: white;">
                <children>
                   <Pane layoutX="181.0" layoutY="20.0" prefHeight="26.0" prefWidth="1366.0" style="-fx-background-color: #0A115A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0" />
-                  <HBox layoutX="200.0" layoutY="-17.0" prefHeight="40.0" prefWidth="1087.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
-                     <children>
-                        <Label alignment="CENTER" prefHeight="43.0" prefWidth="894.0" text="GameX" textFill="#fc0000">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="36.0" />
-                           </font>
-                        </Label>
-                     </children></HBox>
+                  <HBox layoutX="200.0" layoutY="-17.0" prefHeight="40.0" prefWidth="1087.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+                  <ImageView fitHeight="43.0" fitWidth="139.0" layoutX="7.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logo%209%20(1).png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
+      <ComboBox fx:id="comboxL" layoutX="560.0" layoutY="379.0" prefHeight="34.0" prefWidth="294.0" />
+      <ComboBox fx:id="comboxS" layoutX="559.0" layoutY="478.0" prefHeight="34.0" prefWidth="294.0" />
+      <VBox layoutY="70.0" prefHeight="697.0" prefWidth="202.0" style="-fx-background-color: #0A115A;">
+         <children>
+            <HBox onMouseClicked="#form" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/dash.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="100.0" text="Accueil" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox onMouseClicked="#abon" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/abo.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="148.0" text="List of orders" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox onMouseClicked="#stat" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/iii.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="122.0" text="Statistique" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

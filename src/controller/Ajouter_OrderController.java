@@ -10,6 +10,7 @@ import static java.lang.Integer.parseInt;
 import java.net.URL;
 import java.sql.Connection;
 import java.time.ZoneId;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -23,6 +24,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -58,8 +61,6 @@ public class Ajouter_OrderController implements Initializable {
     private Button ajouter;
     private Button consulter;
     @FXML
-    private AnchorPane slider;
-    @FXML
     private Text etat;
     
     Connection cnx = DBUtil.getInstance().getCnx();
@@ -68,9 +69,7 @@ public class Ajouter_OrderController implements Initializable {
     private TextField reffe;
     @FXML
     private TextField regio;
-    @FXML
     private TextField payss;
-    @FXML
     private TextField etatt;
     @FXML
     private TextField codepostal;
@@ -78,27 +77,71 @@ public class Ajouter_OrderController implements Initializable {
     private Text etat1;
     @FXML
     private AnchorPane slider1;
-    @FXML
     private Button felsh_id1;
-    private Label cmde3;
     @FXML
+    private ImageView cmde3;
     private Button felsh_id111;
     @FXML
     private Button felsh_id11;
+    @FXML
+    private ComboBox<String> comboxS;
+    @FXML
+    private ComboBox<String> comboxL;
+    @FXML
+    private Label admin;
+    @FXML
+    private ImageView homeMarket;
+    @FXML
+    private Label home1;
 
+    
+    
+   
     /**
      * Initializes the controller class.
      */
+    
+    public void getLocation() {
+        String[] countries = Locale.getISOCountries();
+
+        // Loop each country 
+        for (int i = 0; i < countries.length; i++) {
+
+            String country = countries[i];
+            Locale locale = new Locale("en", country);
+
+            // Get the country name by calling getDisplayCountry()
+            String countryName = locale.getDisplayCountry();
+            // Printing the country name on the console
+            System.out.println(i + 1 + " : " + countryName);
+            comboxL.getItems().addAll(countryName);
+
+        }
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        getLocation();
+        comboxS.getItems().addAll(
+            "Cancled",
+            "in progress"
+        );
+        
+        
+        
+        
+        
     }    
+    
+    
 
  
     @FXML
     private void ajouter_order(ActionEvent Order) {
         Boolean Etat;
-        if (reffe.getText().isEmpty() || numero.getText().isEmpty() ||payss.getText().isEmpty() || regio.getText().isEmpty()|| etatt.getText().isEmpty() || codepostal.getText().isEmpty()) {
+        if (reffe.getText().isEmpty() || numero.getText().isEmpty() ||comboxL.getItems().isEmpty() || regio.getText().isEmpty()|| comboxS.getItems().isEmpty() || codepostal.getText().isEmpty()) {
                System.out.println("Fields Are Empty");
                Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information Dialog");
@@ -173,15 +216,21 @@ public class Ajouter_OrderController implements Initializable {
             String ref_cmde = reffe.getText();
             int phone = parseInt(numero.getText());
             String Region = regio.getText();
-            String Pays = payss.getText();
-            if(etatt.getText().equals("true")){
-             Etat=true;
-            }else{
-                 Etat=false;
-            }
+            comboxL.getValue();
+            comboxS.getValue();
             int code = parseInt(codepostal.getText());
+            /*if(check1.isSelected()){
+                System.out.println("hello");
+                check1=new CheckBox("confirmed");
+            }
+            if(check2.isSelected()){
+            check2=new CheckBox("cancled");
+            }
+            if(check3.isSelected()){
+            check3=new CheckBox("en cours");
+            }*/
             ZoneId defaultZoneId = ZoneId.systemDefault();
-            Order ev = new Order(ref_cmde, phone, Region,Pays,Etat,code);
+            Order ev = new Order(ref_cmde, phone, Region,comboxL.getValue(), comboxS.getValue(),code);
             eventcru.ajouter2(ev);
             System.err.println("Added Seccessfully");
             
@@ -192,9 +241,9 @@ public class Ajouter_OrderController implements Initializable {
                 alert.show();
                 reffe.setText("");
                 numero.setText("");
-                payss.setText("");
+                comboxL.setValue("");
                 regio.setText("");
-                etatt.setText("");
+                comboxS.setValue("");
                 codepostal.setText("");
                 try {
                     Parent parent = FXMLLoader.load(getClass().getResource("/view/orderAfficheFront.fxml"));
@@ -247,7 +296,6 @@ public class Ajouter_OrderController implements Initializable {
 
  
 
-    @FXML
     private void but4(ActionEvent event) {
          try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/orderAfficheFront.fxml"));
@@ -260,6 +308,26 @@ public class Ajouter_OrderController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(AfficherOrderBackController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void deco(MouseEvent event) {
+    }
+
+    @FXML
+    private void homeMarket(MouseEvent event) {
+    }
+
+    @FXML
+    private void form(MouseEvent event) {
+    }
+
+    @FXML
+    private void cmde3(MouseEvent event) {
+    }
+
+    @FXML
+    private void stat(MouseEvent event) {
     }
 
     

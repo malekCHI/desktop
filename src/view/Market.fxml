@@ -25,7 +25,7 @@
                     <left>
                         <VBox fx:id="sideArea">
                             <children>
-                                <HBox fx:id="sideControls" alignment="CENTER" prefHeight="25.0" prefWidth="67.0" spacing="8.0" style="-fx-background-color: #242B6E;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <HBox fx:id="sideControls" alignment="CENTER" prefHeight="25.0" prefWidth="67.0" spacing="8.0" style="-fx-background-color: blanc;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <ImageView fitHeight="58.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -33,7 +33,7 @@
                                  </image>
                               </ImageView>
                            </children></HBox>
-                                <VBox fx:id="sideNav" alignment="TOP_CENTER" prefHeight="545.0" prefWidth="191.0" spacing="30.0" style="-fx-background-color: #242B6E; -fx-background-color: ;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" VBox.vgrow="ALWAYS">
+                                <VBox fx:id="sideNav" alignment="TOP_CENTER" prefHeight="545.0" prefWidth="191.0" spacing="30.0" style="-fx-background-color: #0A115A; -fx-background-color: ;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" VBox.vgrow="ALWAYS">
                                     <children>
                                         <Region fx:id="navHome" maxHeight="18.0" maxWidth="18.0" minHeight="18.0" minWidth="18.0" onMouseClicked="#showHomeView" opacity="0.75" prefHeight="18.0" prefWidth="18.0" style="-fx-shape: &quot;M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z&quot;; -fx-background-color: #ffffff;">
                                             <cursor>
@@ -55,7 +55,10 @@
                                     <Font name="Arial Rounded MT Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="commande" mnemonicParsing="false" onAction="#cmde" text="passer une commande" textFill="#5c0aff" />
+                              <Button fx:id="commande" mnemonicParsing="false" onAction="#cmde" style="-fx-background-color: #990b0b;" text="+ Add new order" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font></Button>
                                     </children>
                                     <padding>
                                         <Insets top="20.0" />

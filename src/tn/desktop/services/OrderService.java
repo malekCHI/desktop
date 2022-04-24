@@ -18,6 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import static javafx.scene.Cursor.cursor;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.CheckBox;
 import tn.desktop.utils.DBUtil;
 import tn.desktop.entities.Order;
 
@@ -32,6 +33,8 @@ public class OrderService implements IInterface{
     private Statement ste;
     private PreparedStatement pst;
     private ResultSet rs;
+    
+
     
     private static OrderService instance;
 
@@ -51,7 +54,7 @@ public class OrderService implements IInterface{
             ResultSet rs = ste.executeQuery(requete);
 
             while (rs.next()) {              
-                personnes.add(new Order(rs.getInt("id"),rs.getBoolean("etat_cmde"), rs.getString("ref_cmde"), rs.getString("pays"),rs.getString("region"),rs.getInt("tel"),rs.getInt("code_postal")));
+                personnes.add(new Order(rs.getInt("id"),rs.getString("status"), rs.getString("ref_cmde"), rs.getString("pays"),rs.getString("region"),rs.getInt("tel"),rs.getInt("code_postal")));
             }
 
         } catch (SQLException ex) {
@@ -75,7 +78,7 @@ public class OrderService implements IInterface{
             resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
               // Order order = new Order(rs.getInt("id"),rs.getString("ref_cmde"),rs.getBoolean("etat_cmde"),rs.getInt("tel"));
-              Order order = new Order (rs.getInt("id"),rs.getBoolean("etat_cmde"), rs.getString("ref_cmde"), rs.getString("pays"),rs.getString("region"),rs.getInt("tel"),rs.getInt("code_postal"));
+              Order order = new Order (rs.getInt("id"),rs.getString("status"), rs.getString("ref_cmde"), rs.getString("pays"),rs.getString("region"),rs.getInt("tel"),rs.getInt("code_postal"));
                 orderList.add(order);
             }
         } catch (Exception ex) {
@@ -104,11 +107,12 @@ public class OrderService implements IInterface{
     
           
           
-        String req="insert into commande (ref_cmde,etat_cmde,pays,region,code_postal,tel) values (?,?,?,?,?,?)";
+        String req="insert into commande (ref_cmde,status,pays,region,code_postal,tel) values (?,?,?,?,?,?)";
         try {
             pst=cnx.prepareStatement(req);  
             pst.setString(1, c.getRef_cmde());
-            pst.setBoolean(2,c.getEtat_cmde());
+            //pst.setBoolean(2,c.getEtat_cmde());
+            pst.setString(2,c.getStatus());
             pst.setString(3,c.getPays());
             pst.setString(4,c.getRegion());
             pst.setInt(5,c.getCode_postal());
@@ -127,10 +131,10 @@ public class OrderService implements IInterface{
     
     @Override
     public void modifierPST(Order f) throws SQLException{
-        String req="update commande set etat_cmde=? ,pays =? ,region=? ,code_postal=? ,tel=?  where ref_cmde=? ";
+        String req="update commande set status=? ,pays =? ,region=? ,code_postal=? ,tel=?  where ref_cmde=? ";
         try {
             pst=cnx.prepareStatement(req);
-            pst.setBoolean(1,f.getEtat_cmde());
+            pst.setString(1,f.getStatus());
             pst.setString(2,f.getPays());
             pst.setString(3,f.getRegion());
              pst.setInt(4,f.getCode_postal());

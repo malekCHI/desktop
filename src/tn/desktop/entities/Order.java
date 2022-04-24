@@ -14,15 +14,34 @@ public class Order {
     private int code_postal,tel;
     private String ref_cmde,Pays,Region;
     private Boolean etat_cmde;
+    private String status;
 
-    public Order(int id, int code_postal, int tel, String ref_cmde, String Pays, String Region, Boolean etat_cmde) {
+    public Order(String ref_cmde, int tel, String Region, String Pays, String status, int code_postal) {
+        this.ref_cmde = ref_cmde;
+        this.tel = tel;
+        this.Region = Region;
+        this.Pays = Pays;
+        this.status = status;
+        this.code_postal = code_postal;
+
+            }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Order(int id, int code_postal, int tel, String ref_cmde, String Pays, String Region, String status) {
         this.id = id;
         this.code_postal = code_postal;
         this.tel = tel;
         this.ref_cmde = ref_cmde;
         this.Pays = Pays;
         this.Region = Region;
-        this.etat_cmde = etat_cmde;
+        this.status = status;
     }
 
     public Order(int id, String ref_cmde, String Pays) {
@@ -30,9 +49,9 @@ public class Order {
         this.ref_cmde = ref_cmde;
         this.Pays = Pays;
     }
-     public Order(String ref_cmde,Boolean etat_cmde, String Pays, String Region) {
+     public Order(String ref_cmde,String status, String Pays, String Region) {
         this.ref_cmde = ref_cmde;
-        this.etat_cmde=etat_cmde;
+        this.status=status;
         this.Pays = Pays;
         this.Region = Region;
     }
@@ -51,9 +70,9 @@ public class Order {
         this.id=id;
     }
 
-    public Order(int id,Boolean etat_cmde, String ref_cmde, String Pays, String Region, int tel, int code_postal) {
+    public Order(int id,String status, String ref_cmde, String Pays, String Region, int tel, int code_postal) {
         this.id=id;
-        this.etat_cmde=etat_cmde;
+        this.status=status;
         this.ref_cmde = ref_cmde;
         this.Pays = Pays;
         this.Region = Region;
@@ -62,9 +81,9 @@ public class Order {
         
     }
 
-    public Order(String ref_cmde,boolean etat_cmde, String Pays, String Region, int tel, int code_postal) {
+    public Order(String ref_cmde,String status, String Pays, String Region, int tel, int code_postal) {
         this.ref_cmde = ref_cmde;
-        this.etat_cmde=etat_cmde;
+        this.status=status;
         this.Pays = Pays;
         this.Region = Region;
         this.tel=tel;
@@ -72,8 +91,8 @@ public class Order {
         
     }
 
-    public Order( boolean etat_cmde, String Pays, String Region, int tel, int code_postal, int id) {
-        this.etat_cmde=etat_cmde;
+    public Order( String status, String Pays, String Region, int tel, int code_postal, int id) {
+        this.status=status;
         this.Pays = Pays;
         this.Region = Region;
         this.tel=tel;
@@ -82,23 +101,14 @@ public class Order {
         
     }
 
-    public Order(int id, String ref_cmde, boolean etat_cmde, int tel) {
+    public Order(int id, String ref_cmde, String status, int tel) {
         this.id=id;
         this.ref_cmde = ref_cmde;
-        this.etat_cmde=etat_cmde;
+        this.status=status;
         this.tel=tel;
  
     }
 
-    public Order(String ref_cmde, int tel, String Region, String Pays, Boolean etat_cmde,int code_postal) {
-        this.ref_cmde = ref_cmde;
-        this.tel=tel;
-        this.Region = Region;
-        this.Pays = Pays;
-        this.etat_cmde=etat_cmde;
-        this.tel=tel;
-        this.code_postal=code_postal;
-    }
 
     public Order() {
         
