@@ -174,7 +174,7 @@ public class AfficherOrderBackController implements Initializable {
        doc.add(new Paragraph("List of commands",FontFactory.getFont(FontFactory.TIMES_BOLD,20,BaseColor.LIGHT_GRAY)));
        doc.add(new Paragraph(" "));
 
-       PdfPTable table = new PdfPTable(3);
+       PdfPTable table = new PdfPTable(6);
        table.setWidthPercentage(100);
 
        PdfPCell cell;
