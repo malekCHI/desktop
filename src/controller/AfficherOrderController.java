@@ -135,26 +135,6 @@ public class AfficherOrderController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         
-        
-        
-       /* List<CartEntry> entries = ShoppingCart.getInstance().getEntries();
-
-         Label shoppingCartTitle=new Label("Shopping cart");
-            //cartPane.getChildren().add(shoppingCartTitle);
-            System.out.println("maleknhhh");
-            for(CartEntry cartEntry:entries){
-            try {
-                HBox productView = cartEntryView(cartEntry);
-                cartPane.getChildren().add(productView);
-                System.out.println("jjjj");
-                Separator separator =new Separator();
-                separator.setOrientation(Orientation.HORIZONTAL);
-                cartPane.getChildren().add(separator);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(AfficherOrderController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            }*/
-        
         OrderService evcrud = new OrderService();
         ArrayList<Order> ev = (ArrayList<Order>) evcrud.afficher();
         ObservableList<Order> obs = FXCollections.observableArrayList(ev);
