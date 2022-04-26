@@ -118,8 +118,6 @@ public class AfficherOrderController implements Initializable {
     @FXML
     private ImageView homeMarket;
     @FXML
-    private Button calcul;
-    @FXML
     private TextField cal;
     
     private Connection cnx;
@@ -134,6 +132,10 @@ public class AfficherOrderController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        
+        OrderService ec = new OrderService();
+        String s = ec.countOrder();
+        cal.setText(s);
         
         OrderService evcrud = new OrderService();
         ArrayList<Order> ev = (ArrayList<Order>) evcrud.afficher();
@@ -471,12 +473,9 @@ public class AfficherOrderController implements Initializable {
         }
     }
 
-    @FXML
     private void calcul(ActionEvent event) {
         
-        OrderService ec = new OrderService();
-        String s = ec.countOrder();
-        cal.setText(s);
+        
     }
 
   

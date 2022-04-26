@@ -32,6 +32,7 @@ import javafx.stage.Stage;
 import static javax.swing.JOptionPane.showMessageDialog;
 import tn.desktop.entities.Order;
 import tn.desktop.services.OrderService;
+import tn.desktop.utils.SmsTwillio;
 
 /**
  * FXML Controller class
@@ -135,6 +136,7 @@ public class Edit_OrderControllerBack implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+         SmsTwillio.sms (comboxS.getValue());
     }
     /**
      * Initializes the controller class.

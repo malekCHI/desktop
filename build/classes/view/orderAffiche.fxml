@@ -47,11 +47,7 @@
                                                    </font>
                                                 </Label>
                                              </children></Pane>
-                                          <HBox layoutX="200.0" layoutY="-17.0" prefHeight="45.0" prefWidth="1168.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
-                                             <children>
-                                                <HBox prefHeight="40.0" prefWidth="1132.0" />
-                                             </children>
-                                          </HBox>
+                                          <HBox layoutX="200.0" layoutY="-17.0" prefHeight="45.0" prefWidth="1168.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
                                           <ImageView fitHeight="43.0" fitWidth="139.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/logo%209%20(1).png" />

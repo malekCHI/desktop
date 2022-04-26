@@ -34,9 +34,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tn.desktop.entities.Order;
+import tn.desktop.services.MailerService;
 import tn.desktop.services.OrderService;
 import tn.desktop.utils.DBUtil;
 import tn.desktop.utils.DataValidationUtils;
+import tn.desktop.utils.SmsTwillio;
 
 /**
  * FXML Controller class
@@ -254,8 +256,12 @@ public class Ajouter_OrderController implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
+            
             }
+        
+        
+        MailerService ms = new MailerService();
+        ms.replyMail("malek.chiha@esprit.tn","malek","Bonjour Monsieur/Madame votre commande a été creée");
     }
 
             
