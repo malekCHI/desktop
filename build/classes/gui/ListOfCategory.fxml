@@ -63,7 +63,7 @@
                               <Image url="@../img/iii.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="60.0" prefWidth="95.0" text="Statistics" textFill="WHITE" />
+                        <Label fx:id="stat" onMouseClicked="#btnStat" prefHeight="60.0" prefWidth="95.0" text="Statistics" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>
@@ -111,7 +111,7 @@
                               </HBox>
                               <HBox onMouseClicked="#stat" prefHeight="45.0" prefWidth="305.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
-                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="iconStat" fitHeight="45.0" fitWidth="47.0" onMouseClicked="#iconBtnStat" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../img/stat2.png" />
                                        </image>
@@ -167,11 +167,6 @@
           <TableColumn fx:id="descCat" prefWidth="592.0" text="Description" />
         </columns>
       </TableView>
-      <Button fx:id="Sum" layoutX="976.0" layoutY="183.0" mnemonicParsing="false" onAction="#btnSum" onMouseClicked="#calculer" prefHeight="45.0" prefWidth="96.0" text="SUM" textFill="#dc1212">
-         <font>
-            <Font name="System Bold Italic" size="17.0" />
-         </font>
-      </Button>
       <TextField fx:id="nbrProd" layoutX="1073.0" layoutY="190.0" prefHeight="20.0" prefWidth="130.0" />
    </children>
 </AnchorPane>

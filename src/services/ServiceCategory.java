@@ -154,7 +154,7 @@ public class ServiceCategory implements ICategory<Category>{
             pst.executeQuery(req);
             ResultSet rs = pst.getResultSet();
             rs.next();
-            return ("  " + rs.getInt("count(*)") + " category");
+            return ("  " + rs.getInt("count(*)") + " categories");
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
             return null;

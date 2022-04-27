@@ -32,6 +32,8 @@ public class ListFrontController implements Initializable {
     private Label fxprix;
     @FXML
     private ImageView backB;
+    @FXML
+    private ImageView aa;
 
     /**
      * Initializes the controller class.

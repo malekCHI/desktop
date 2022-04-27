@@ -7,8 +7,13 @@ package controller;
 
 import entities.Category;
 import entities.Product;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -24,6 +29,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -35,7 +41,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import services.ServiceProduct;
+import utils.Data;
 
 /**
  * FXML Controller class
@@ -79,6 +96,8 @@ public class ListOfProductController implements Initializable {
     public static int stockrecup;
     public static int id_rec;
     private Button reload;
+    public static String img_recup;
+
     @FXML
     private TableColumn<Category, String> cat;
     @FXML
@@ -100,9 +119,11 @@ public class ListOfProductController implements Initializable {
     @FXML
     private Button supp;
     @FXML
-    private Button Sum;
-    @FXML
     private Label MenuClosefront1;
+    @FXML
+    private ImageView pdf;
+    @FXML
+    private Button idFront;
 
     /**
      * Initializes the controller class.
@@ -118,6 +139,7 @@ public class ListOfProductController implements Initializable {
         //table.setItems(obs);
         refProd.setCellValueFactory(new PropertyValueFactory<Product,String>("reference"));
         nameProd.setCellValueFactory(new PropertyValueFactory<Product,String>("product_name"));
+
         descProd.setCellValueFactory(new PropertyValueFactory<Product,String>("description"));
         
         
@@ -164,6 +186,10 @@ public class ListOfProductController implements Initializable {
 		sortedData.comparatorProperty().bind(tableProd.comparatorProperty());
 
         tableProd.setItems(sortedData);
+        
+        ServiceProduct ec = new ServiceProduct();
+        String s = ec.countProduct();
+        nbrProd.setText(s);
 
 
         
@@ -322,12 +348,12 @@ public class ListOfProductController implements Initializable {
         }
     }
 
-    @FXML
+   /* @FXML
     private void btnSum(ActionEvent event) {
         ServiceProduct ec = new ServiceProduct();
         String s = ec.countProduct();
         nbrProd.setText(s);
-    }
+    }*/
 
 
     @FXML
@@ -360,9 +386,6 @@ public class ListOfProductController implements Initializable {
         }
     }
 
-    @FXML
-    private void calculer(MouseEvent event) {
-    }
 
     @FXML
     private void btnFront(MouseEvent event) {
@@ -371,6 +394,8 @@ public class ListOfProductController implements Initializable {
         ListOfProductController.productnamerecup=ev.getProductName();
 
         ListOfProductController.decriptionrecup=ev.getDescription();
+        ListOfProductController.img_recup=ev.getImage();
+
         
         ListOfProductController.pricerecup=ev.getPrice();
         ListOfProductController.stockrecup=ev.getStock();
@@ -390,6 +415,110 @@ public class ListOfProductController implements Initializable {
             Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
+
+  
+    @FXML
+    private void exportToPdf(MouseEvent event) {
+        Data cnx = Data.getInstance();
+
+        PreparedStatement pst=null;
+        ResultSet rs=null;
+        String guery = " select * from product";
+        try {   
+
+        pst= cnx.getCnx().prepareStatement(guery);
+        rs= pst.executeQuery();
+
+        String file_name = "product.pdf";
+        Document doc = new Document();
+        PdfWriter.getInstance(doc, new FileOutputStream(file_name));
+
+        doc.open();
+
+        com.itextpdf.text.Image img = com.itextpdf.text.Image.getInstance("C:\\xampp\\htdocs\\PiDev-Brainstormers-main\\public\\logo9.png");
+        img.scaleAbsoluteWidth(600);
+        img.scaleAbsoluteHeight(92);
+        img.setAlignment(com.itextpdf.text.Image.ALIGN_CENTER);
+        doc.add(img);
+
+        doc.add(new Paragraph(" "));
+        doc.add(new Paragraph("Product list",FontFactory.getFont(FontFactory.TIMES_BOLD,20,BaseColor.BLUE)));
+        doc.add(new Paragraph(" "));
+
+        PdfPTable table = new PdfPTable(3);
+        table.setWidthPercentage(100);
+        PdfPCell cell;
+        
+
+        cell = new PdfPCell (new Phrase("Reference", FontFactory.getFont("Comic Sans MS",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.LIGHT_GRAY);
+        table.addCell(cell);
+        
+        cell = new PdfPCell (new Phrase("Product Name", FontFactory.getFont("Comic Sans MS",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.LIGHT_GRAY);
+        table.addCell(cell);
+
+        cell = new PdfPCell (new Phrase("Price", FontFactory.getFont("Comic Sans MS",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.LIGHT_GRAY);
+        table.addCell(cell);
+
+        
+        /////////////////////////////////////////////////////////////////////////////////
+        while(rs.next()) {
+        cell = new PdfPCell (new Phrase(rs.getString("reference").toString(), FontFactory.getFont("Arial",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(cell);
+            
+            
+            
+        cell = new PdfPCell (new Phrase(rs.getString("product_name").toString(), FontFactory.getFont("Arial",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(cell);
+
+        
+
+        cell = new PdfPCell (new Phrase(rs.getString("price").toString(), FontFactory.getFont("Arial",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(cell); }
+
+        doc.add(table);
+
+        System.out.println("done");
+        doc.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Products details exported to PDF Sheet");
+            alert.show();
+
+    }
+
+    @FXML
+    private void btnIdFront(ActionEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/AllProductFront.fxml"));
+            Stage stage = (Stage) iconStat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
+    

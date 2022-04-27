@@ -16,7 +16,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListOfProductController">
    <children>
-      <Text fill="#cd2323" layoutX="683.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List Of Product" textAlignment="CENTER" wrappingWidth="213.69842529296875">
+      <Text fill="#cd2323" layoutX="662.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List Of Products" textAlignment="CENTER" wrappingWidth="255.69842529296875">
          <font>
             <Font name="Arial Rounded MT Bold" size="28.0" />
          </font>
@@ -173,12 +173,13 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="Sum" layoutX="997.0" layoutY="174.0" mnemonicParsing="false" onAction="#btnSum" onMouseClicked="#calculer" prefHeight="45.0" prefWidth="96.0" text="SUM" textFill="#dc1212">
-         <font>
-            <Font name="System Bold Italic" size="17.0" />
-         </font>
-      </Button>
       <TextField fx:id="nbrProd" layoutX="1094.0" layoutY="181.0" prefHeight="20.0" prefWidth="130.0" />
       <Label fx:id="MenuClosefront1" layoutX="245.0" layoutY="732.0" onMouseClicked="#btnFront" prefHeight="36.0" prefWidth="96.0" text="Front" />
+      <ImageView fx:id="pdf" fitHeight="70.0" fitWidth="52.0" layoutX="249.0" layoutY="92.0" onMouseClicked="#exportToPdf" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/pdf.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="idFront" layoutX="724.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnIdFront" text="Front Product" />
    </children>
 </AnchorPane>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AllProductFrontController">
+   
+    <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="65.0" prefWidth="1328.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="65.0" prefWidth="976.0">
+                     <children>
+                        <AnchorPane prefHeight="70.0" prefWidth="1311.0" style="-fx-background-color: white;">
+                           <children>
+                              <Pane layoutX="181.0" layoutY="20.0" prefHeight="66.0" prefWidth="1372.0" style="-fx-background-color: #0A115A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-61.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="611.0" layoutY="10.0" text="Products" textFill="WHITE">
+                                       <font>
+                                          <Font size="31.0" />
+                                       </font>
+                                    </Label>
+                                 </children></Pane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="1086.0" prefWidth="366.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logo%209.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="537.0" prefWidth="1109.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="backB" fitHeight="45.0" fitWidth="47.0" layoutX="887.0" layoutY="29.0" onMouseClicked="#backToBack" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/dash1.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane layoutX="-169.0" layoutY="93.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: white;">
+                     <children>
+                        <StackPane layoutX="45.0" layoutY="-14.0" prefHeight="576.0" prefWidth="793.0" style="-fx-background-color: #02030A;">
+                           <children>
+                              <Pane fx:id="pnlCustomer" prefHeight="200.0" prefWidth="200.0" />
+                              <Pane fx:id="pnlOrders" prefHeight="200.0" prefWidth="200.0" />
+                              <Pane fx:id="pnlMenus" prefHeight="576.0" prefWidth="707.0" />
+                              <Pane fx:id="pnlOverview" prefHeight="519.0" prefWidth="754.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Label layoutX="57.0" layoutY="25.0" text="Products" textFill="#0070ff">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ScrollPane fx:id="scrollPaneItems" layoutX="14.0" layoutY="120.0" prefHeight="420.0" prefWidth="746.0" stylesheets="@../style.css">
+                                       <content>
+                                          <HBox fx:id="boxItems" prefHeight="465.0" prefWidth="862.0" style="-fx-background-color: white;" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </StackPane>
+                     </children>
+                     <effect>
+                        <DropShadow color="#1b1eeb" />
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <GridPane fx:id="gird" layoutX="623.0" layoutY="263.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+    </children>
+</AnchorPane>

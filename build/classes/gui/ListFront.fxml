@@ -15,7 +15,7 @@
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="537.0" prefWidth="1109.0">
          <children>
-            <Pane layoutX="196.0" layoutY="186.0" prefHeight="166.0" prefWidth="718.0">
+            <Pane layoutX="98.0" layoutY="169.0" prefHeight="325.0" prefWidth="971.0">
                <children>
                   <Label fx:id="label" layoutX="232.0" layoutY="28.0" minHeight="16" minWidth="69" text="product" />
                   <Button fx:id="button" layoutX="534.0" layoutY="113.0" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="137.0" styleClass="add1-btn" text="Add To Cart" textFill="WHITE">
@@ -37,6 +37,7 @@
                      </viewport>
                   </ImageView>
                   <Label fx:id="fxprix" layoutX="424.0" layoutY="28.0" text="price" />
+                  <ImageView fx:id="aa" fitHeight="121.0" fitWidth="151.0" layoutX="14.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
                </children>
                <styleClass>
                   <String fx:value="fruit-item" />

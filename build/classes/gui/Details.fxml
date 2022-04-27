@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="300.0" style="-fx-background-color: #02030A; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DetailsController">
+   <children>
+      <Pane fx:id="pnItem" prefHeight="360.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fx:id="imNft" fitHeight="140.0" fitWidth="168.0" layoutX="93.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Nfts/default.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblTitle" layoutX="88.0" layoutY="171.0" text="Title" textFill="#bf1e1e" />
+            <Label fx:id="lblCreationDate" layoutX="90.0" layoutY="240.0" text="     Date" textFill="#9e3d3d" />
+            <Label fx:id="lblOwner" layoutX="88.0" layoutY="268.0" prefHeight="17.0" prefWidth="94.0" text="author" textFill="#ab4a4a" />
+            <Label fx:id="lblCategory" layoutX="86.0" layoutY="208.0" text="Category" textFill="#ae4343" />
+         </children>
+      </Pane>
+   </children>
+</VBox>

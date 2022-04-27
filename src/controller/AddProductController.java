@@ -8,9 +8,10 @@ package controller;
 import entities.Category;
 import entities.Product;
 import static java.awt.SystemColor.text;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import static java.lang.Integer.parseInt;
+import static java.lang.Integer.parseInt;  
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.Date;
@@ -39,10 +40,24 @@ import javafx.stage.Stage;
 import services.ServiceProduct;
 import utils.Data;
 import java.util.regex.Pattern;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.Pane;
+import javafx.util.Duration;
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
+import services.MailerService;
 import utils.DataValidationUtils;
+import utils.SmsTwillio;
+import utils.Upload;
 /**
  * FXML Controller class
  *
@@ -97,6 +112,7 @@ public class AddProductController implements Initializable {
     
     
     
+    
     @FXML
     private Label btnProducts;
     @FXML
@@ -105,6 +121,21 @@ public class AddProductController implements Initializable {
     private ImageView iconProd;
     @FXML
     private ImageView iconCat;
+    @FXML
+    private Button exit;
+    private Button addRec;
+    @FXML
+    private Pane pane1;
+    
+    private JFrame frame;
+    @FXML
+    private ImageView myImageView;
+    String s;
+       private File file;
+   private Image image1;
+    String pic;
+    @FXML
+    private TextField fxidImg;
 
     /**
      * Initializes the controller class.
@@ -212,7 +243,7 @@ public class AddProductController implements Initializable {
                 String ref = txtReference.getText();
                 String name = txtName.getText();
                 String desc = txtDescription.getText();
-                String img = btnInsertImage.getText();
+                String img = fxidImg.getText();
 
             int price = parseInt(txtPrice.getText());
             int stock = parseInt(txtStock.getText());
@@ -236,11 +267,11 @@ public class AddProductController implements Initializable {
          
             System.err.println("Added Seccessfully");
              
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+           /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("Information Dialog");
                         alert.setHeaderText(null);
                         alert.setContentText("Product added successfuly!");
-                        alert.show();
+                        alert.show();*/
                         txtReference.setText("");
                         txtName.setText("");
                         txtDescription.setText(" ");
@@ -257,10 +288,19 @@ public class AddProductController implements Initializable {
                  } catch (IOException e) {
                     e.printStackTrace();
                 }
+              
+              
+              
+              Notifications.create()
+                      .title("Added Complete")
+                      .text("Saved").darkStyle().position(Pos.TOP_RIGHT)
+                      .showInformation();
+              /* MailerService ms = new MailerService();
+            ms.replyMail("maryem.benmohamed@esprit.tn","maryem","Bonjour Monsieur votre operation a été acceptée");*/
             
 
                             
-        
+        SmsTwillio.sms (txtReference.getText());
     
         }}
 
@@ -280,14 +320,52 @@ public class AddProductController implements Initializable {
     }
 
     @FXML
-    private void btnInsertImg(ActionEvent Product) {
-        FileChooser F = new FileChooser();
+    private void btnInsertImg(ActionEvent Product) throws IOException {
+        /*FileChooser F = new FileChooser();
         F.setTitle("Choisir une image");
         F.getExtensionFilters().addAll();
         File f = F.showOpenDialog(slider.getScene().getWindow());
         if(f != null){
             btnInsertImage.setText(f.toString());
-        }
+        }*/
+         /*FileChooser fileChooser = new FileChooser();
+
+        //Set extension filter
+        FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
+        FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
+        fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
+
+        //Show open file dialog
+        File file = fileChooser.showOpenDialog(null);
+
+        String path = file.getAbsolutePath();
+        s = path;
+
+        try {
+            BufferedImage bufferedImage = ImageIO.read(file);
+            WritableImage image = SwingFXUtils.toFXImage(bufferedImage, null);
+
+            myImageView.setImage(image);
+        } catch (IOException ex) {
+            Logger.getLogger(AddProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+          FileChooser fileChooser = new FileChooser();
+            file= fileChooser.showOpenDialog(null);
+             FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
+            FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
+            fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
+
+            
+            pic=(file.toURI().toString());
+         //  pic=new Upload().upload(file,"uimg");
+           pic=new Upload().upload(file,"");
+            System.out.println(pic);
+   //   image= new Image("http://localhost/uimg/"+pic);
+           fxidImg.setText(pic);
+
+           image1= new Image("http://localhost/PiDev-Brainstormers-main/public/uploads"+pic);
+           myImageView.setImage(image1);
+
     }
 
     @FXML
@@ -348,6 +426,18 @@ public class AddProductController implements Initializable {
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void calculer(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnExit(ActionEvent event) {
+        frame = new JFrame();
+        if(JOptionPane.showConfirmDialog(frame, "Confir if you want to exit", "Print Systems", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+            System.exit(0);
         }
     }
 

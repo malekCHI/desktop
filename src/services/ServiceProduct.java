@@ -286,7 +286,7 @@ public class ServiceProduct implements IProduct<Product>{
             pst.executeQuery(req);
             ResultSet rs = pst.getResultSet();
             rs.next();
-            return ("  " + rs.getInt("count(*)") + " product");
+            return ("  " + rs.getInt("count(*)") + " products");
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
             return null;
@@ -295,6 +295,66 @@ public class ServiceProduct implements IProduct<Product>{
         
 
     }
+       
+       
+       public  ArrayList <Product> affichageEventById(String id){
+        
+      ArrayList <Product> list = new ArrayList<>();
+        try{
+            
+            String req = "select * from product where product_name='"+id+"'";
+            PreparedStatement pste = cnx.prepareStatement(req);
+            //  pste.setInt(1, id);
+           
+            ResultSet rs =  pste.executeQuery(req);
+          
+            
+            while (rs.next()){
+                
+                Product e = new Product();
+                
+             e.setId(rs.getInt(1));
+             e.setProductName(rs.getString(3));
+             e.setPrice(rs.getInt(4));
+             e.setDescription (rs.getString(5));
+             e.setStock(rs.getInt(6));
+                         
+             e.setImage(rs.getString(7));
+             e.setReference(rs.getString(8));
+
+             list.add(e);
+
+            }
+         
+        }
+
+        catch(SQLException k){
+            System.out.println("error in affichage event "+k.getMessage());
+        }
+        return list;
+        
+    }   
+       
+       public Product getCarById(String id) {
+        String query = "SELECT * FROM product WHERE product_name ='" + id + "'";
+
+        try {
+            rs = ste.executeQuery(query);
+            while (rs.next()) {
+                Product car = new Product(rs.getInt("id"), rs.getString("reference"), rs.getString("product_name"), rs.getString("description"), rs.getString("image"), rs.getInt("price"),rs.getInt("stock"),new Category(rs.getInt("category_id"), "", ""));              
+                return car;
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+    
+}
+        return null;
+
+}
+
+
+        
       
     public List <Product> tri (String critere,String facon){
                

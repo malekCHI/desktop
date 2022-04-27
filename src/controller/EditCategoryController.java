@@ -18,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -28,6 +29,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import static javax.swing.JOptionPane.showMessageDialog;
+import org.controlsfx.control.Notifications;
 import services.ServiceCategory;
 import services.ServiceProduct;
 
@@ -107,7 +109,11 @@ public class EditCategoryController implements Initializable {
         System.out.println("yes");
         ServiceCategory pr=ServiceCategory.getInstance();
             pr.modifierCategory(prom); 
-        showMessageDialog(null, "update with succese");
+        //showMessageDialog(null, "update with succese");
+        Notifications.create()
+                      .title("Added Complete")
+                      .text("Saved").darkStyle().position(Pos.TOP_RIGHT)
+                      .showInformation();
     }
 
     @FXML

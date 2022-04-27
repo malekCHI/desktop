@@ -20,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -31,6 +32,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
+import services.MailerService;
 import services.ServiceCategory;
 import services.ServiceProduct;
 import utils.Data;
@@ -196,12 +199,12 @@ public class AddCategoryController implements Initializable {
               
             
             
-               System.err.println("Added Seccessfully");
-               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+               //System.err.println("Added Seccessfully");
+               /*Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("Information Dialog");
                         alert.setHeaderText(null);
                         alert.setContentText("Category added successfuly!");
-                        alert.show();
+                        alert.show();*/
                         txtNameCat.setText("");
                         txtDescCat.setText("");
                       
@@ -216,6 +219,13 @@ public class AddCategoryController implements Initializable {
 
             
         }}
+        
+        Notifications.create()
+                      .title("Added Complete")
+                      .text("Saved").darkStyle().position(Pos.TOP_RIGHT)
+                      .showInformation();
+            MailerService ms = new MailerService();
+            ms.replyMail("maryem.benmohamed@esprit.tn","maryem","Bonjour Monsieur votre operation a été acceptée");
     }
 
     @FXML

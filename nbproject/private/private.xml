@@ -4,29 +4,43 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/utils/DataValidationUtils.java</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ListProdFrontController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/PieChartView.fxml</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/javafxapplication/JavaFXApplication.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/AddCategoryController.java</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ListFrontController.java</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/EditProductController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/AllProductFrontController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ListFront.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ProductDetailsController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/DisplayImageControllerRent.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ListFrontController.java</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/javafxapplication/mainProd.java</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ListOfCategoryController.java</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ListOfProduct.fxml</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/FrontController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/AddProductController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/AllProductFront.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ListProdFront.fxml</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/FXMLAffichage_Event.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/EditCategoryController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/services/ServiceProduct.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/PieChartController.java</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/entities/Product.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/services/MailerService.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/PdfViewer.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/services/ServiceCategory.java</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/Front.fxml</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/DetailsController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ListOfProductController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/Test.fxml</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ListProdFrontController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/utils/Upload.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/javafxapplication/JavaFXApplication.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ListFrontController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/EditProductController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/edu/esprit/cryfty/gui/fxml/ItemBController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ProductDetails.fxml</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/javafxapplication/mainProd.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ListOfCategoryController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/utils/MailService.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/Details.fxml</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ListOfProduct.fxml</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/FrontController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/FXMLaffichageEvenController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/utils/SmsTwillio.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/entities/Product.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/Front.fxml</file>
         </group>
     </open-files>
 </project-private>

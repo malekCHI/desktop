@@ -79,9 +79,11 @@ public class ListOfCategoryController implements Initializable {
     private ImageView iconCat;
     private Button reload;
     @FXML
-    private Button Sum;
-    @FXML
     private TextField nbrProd;
+    @FXML
+    private Label stat;
+    @FXML
+    private ImageView iconStat;
    
 
     /**
@@ -134,6 +136,9 @@ public class ListOfCategoryController implements Initializable {
 		sortedData.comparatorProperty().bind(tableCat.comparatorProperty());
 
         tableCat.setItems(sortedData);
+        ServiceCategory ec = new ServiceCategory();
+        String s = ec.countCategory();
+        nbrProd.setText(s);
 
 
         
@@ -283,15 +288,41 @@ public class ListOfCategoryController implements Initializable {
         }
     }
 
-    @FXML
-    private void calculer(MouseEvent event) {
-    }
 
-    @FXML
-    private void btnSum(ActionEvent event) {
+    /*private void btnSum(ActionEvent event) {
         ServiceCategory ec = new ServiceCategory();
         String s = ec.countCategory();
         nbrProd.setText(s);
+    }*/
+
+    @FXML
+    private void btnStat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/PieChartView.fxml"));
+            Stage stage = (Stage) stat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconBtnStat(MouseEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/PieChartView.fxml"));
+            Stage stage = (Stage) iconStat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
