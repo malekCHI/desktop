@@ -5,7 +5,6 @@
  */
 package controller;
 
-import static controller.FXMLaffichageEvenController.product;
 import entities.Product;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -57,9 +56,15 @@ public class FrontController implements Initializable {
     private GridPane gird;
     @FXML
     private ImageView backB;
-    @FXML
-    private ImageView dd;
     public static Product carPassed;
+    @FXML
+    private ImageView imgShow;
+    @FXML
+    private Label desc;
+    @FXML
+    private Label ref;
+    @FXML
+    private Label stock;
 
     /**
      * Initializes the controller class.
@@ -67,8 +72,14 @@ public class FrontController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        ref.setText(ListOfProductController.ref_recup);
+
         label.setText(ListOfProductController.productnamerecup);
+        desc.setText(ListOfProductController.decriptionrecup);
+
         fxprix.setText(String.valueOf(ListOfProductController.pricerecup));
+        stock.setText(String.valueOf(ListOfProductController.stockrecup));
+
         ServiceProduct se =new ServiceProduct();
         Product k = new Product();
         //ArrayList<Product> k = se.affichageEventById(product.getProductName());
@@ -76,7 +87,7 @@ public class FrontController implements Initializable {
 
 
         ImageView img = new ImageView();
-            dd.setImage(new Image("http://localhost/PiDev-Brainstormers-main/public/uploads/"+ListOfProductController.img_recup,200,200,true,true));
+            imgShow.setImage(new Image("http://localhost/PiDev-Brainstormers-main/public/uploads/"+ListOfProductController.img_recup,200,200,true,true));
             
             
 

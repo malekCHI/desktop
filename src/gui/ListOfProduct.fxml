@@ -174,12 +174,12 @@
          </font>
       </Button>
       <TextField fx:id="nbrProd" layoutX="1094.0" layoutY="181.0" prefHeight="20.0" prefWidth="130.0" />
-      <Label fx:id="MenuClosefront1" layoutX="245.0" layoutY="732.0" onMouseClicked="#btnFront" prefHeight="36.0" prefWidth="96.0" text="Front" />
-      <ImageView fx:id="pdf" fitHeight="70.0" fitWidth="52.0" layoutX="249.0" layoutY="92.0" onMouseClicked="#exportToPdf" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pdf" fitHeight="52.0" fitWidth="52.0" layoutX="238.0" layoutY="703.0" onMouseClicked="#exportToPdf" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/pdf.png" />
          </image>
       </ImageView>
-      <Button fx:id="idFront" layoutX="724.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnIdFront" text="Front Product" />
+      <Button fx:id="idFront" layoutX="724.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnIdFront" text="Go " />
+      <Button fx:id="MenuClosefront1" layoutX="1269.0" layoutY="446.0" mnemonicParsing="false" onAction="#btnFront" style="-fx-background-color: #b9caea;" text="Show" />
    </children>
 </AnchorPane>

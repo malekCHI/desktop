@@ -55,10 +55,10 @@
          <center>
             <AnchorPane prefHeight="537.0" prefWidth="1109.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane layoutX="-127.0" layoutY="74.0" prefHeight="609.0" prefWidth="1001.0">
+                  <Pane layoutX="-108.0" layoutY="140.0" prefHeight="403.0" prefWidth="896.0">
                      <children>
-                        <Label fx:id="label" layoutX="232.0" layoutY="28.0" minHeight="16" minWidth="69" text="product" />
-                        <Button fx:id="button" layoutX="534.0" layoutY="113.0" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="137.0" styleClass="add1-btn" text="Add To Cart" textFill="WHITE">
+                        <Label fx:id="label" layoutX="524.0" layoutY="179.0" minHeight="16" minWidth="69" text="product" />
+                        <Button fx:id="button" layoutX="726.0" layoutY="336.0" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="137.0" styleClass="add1-btn" text="Add To Cart" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -68,7 +68,7 @@
                            </stylesheets>
                         </Button>
                         <Label fx:id="idf" layoutX="232.0" layoutY="75.0" opacity="0.0" text="70" />
-                        <ImageView fitHeight="141.0" fitWidth="159.0" layoutX="8.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgShow" fitHeight="205.0" fitWidth="211.0" layoutX="77.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/228a9c2e4a1051827275e94da93e81c0.jpeg" />
                            </image>
@@ -76,8 +76,35 @@
                               <Rectangle2D />
                            </viewport>
                         </ImageView>
-                        <Label fx:id="fxprix" layoutX="570.0" layoutY="28.0" text="price" />
-                        <ImageView fx:id="dd" fitHeight="131.0" fitWidth="154.0" layoutX="14.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="fxprix" layoutX="524.0" layoutY="267.0" text="price" />
+                        <Label layoutX="565.0" layoutY="267.0" text="TND" />
+                        <Label layoutX="383.0" layoutY="263.0" text="Price " textFill="#2b2297">
+                           <font>
+                              <Font size="20.0" />
+                           </font></Label>
+                        <Label fx:id="desc" layoutX="525.0" layoutY="224.0" text="desc" />
+                        <Label fx:id="ref" layoutX="524.0" layoutY="130.0" text="ref" />
+                        <Label fx:id="stock" layoutX="524.0" layoutY="310.0" text="stock" />
+                        <Label layoutX="381.0" layoutY="175.0" text="Product Name" textFill="#2b2297">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="381.0" layoutY="126.0" text="Reference" textFill="#2b2297">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="383.0" layoutY="220.0" text="Description" textFill="#2b2297">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="383.0" layoutY="306.0" text="Stock" textFill="#2b2297">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
                      </children>
                      <styleClass>
                         <String fx:value="fruit-item" />

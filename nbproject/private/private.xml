@@ -14,10 +14,10 @@
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/AddProductController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/AllProductFront.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ListProdFront.fxml</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/FXMLAffichage_Event.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/EditCategoryController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/services/ServiceProduct.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/PieChartController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/Staticts.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/services/MailerService.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/PdfViewer.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/services/ServiceCategory.java</file>
@@ -25,6 +25,7 @@
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ListOfProductController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/Test.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ListProdFrontController.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/Stat.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/utils/Upload.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/javafxapplication/JavaFXApplication.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ListFrontController.java</file>
@@ -34,10 +35,10 @@
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/javafxapplication/mainProd.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/ListOfCategoryController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/utils/MailService.java</file>
+            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/StatController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/Details.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/ListOfProduct.fxml</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/FrontController.java</file>
-            <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/controller/FXMLaffichageEvenController.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/utils/SmsTwillio.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/entities/Product.java</file>
             <file>file:/C:/Users/maryem/Documents/NetBeansProjects/JavaFXApplication/src/gui/Front.fxml</file>

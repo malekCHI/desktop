@@ -18,6 +18,9 @@ import javafx.scene.layout.Pane;
 import static controller.AllProductFrontController.article;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.image.Image;
 
 /**
@@ -48,6 +51,7 @@ public class DetailsController implements Initializable {
     public static Product thisArticle;
      public static Product Posta;
     public static String ayja;
+    private Button show;
 
     /**
      * Initializes the controller class.
@@ -78,6 +82,8 @@ public class DetailsController implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+
+   
   
 
     

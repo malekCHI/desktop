@@ -56,7 +56,7 @@
                               <Image url="@../img/iii.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="60.0" prefWidth="95.0" text="Statistics" textFill="WHITE" />
+                        <Label fx:id="stat" onMouseClicked="#btnStat" prefHeight="60.0" prefWidth="95.0" text="Statistics" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>
@@ -104,7 +104,7 @@
                               </HBox>
                               <HBox onMouseClicked="#stat" prefHeight="45.0" prefWidth="305.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
-                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="iconStat" fitHeight="45.0" fitWidth="47.0" onMouseClicked="#iconBtnStat" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../img/stat2.png" />
                                        </image>

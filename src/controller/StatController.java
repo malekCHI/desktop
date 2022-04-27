@@ -60,6 +60,10 @@ public class StatController implements Initializable {
    
     ObservableList<PieChart.Data> list=FXCollections.
             observableArrayList();
+    @FXML
+    private Label stat;
+    @FXML
+    private ImageView iconStat;
     
 
     /**
@@ -83,6 +87,123 @@ public class StatController implements Initializable {
     private void back(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) back.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void form(MouseEvent event) {
+    }
+
+    @FXML
+    private void goTOList(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) back.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void promo(MouseEvent event) {
+    }
+
+    @FXML
+    private void goListCat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfCategory.fxml"));
+            Stage stage = (Stage) back.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void abon(MouseEvent event) {
+    }
+
+    @FXML
+    private void stat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/Stat.fxml"));
+            Stage stage = (Stage) back.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconGoProd(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfProduct.fxml"));
+            Stage stage = (Stage) back.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconGoCat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/ListOfCategorry.fxml"));
+            Stage stage = (Stage) back.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void btnStat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/Stat.fxml"));
+            Stage stage = (Stage) back.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void iconBtnStat(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/Stat.fxml"));
             Stage stage = (Stage) back.getScene().getWindow();
             stage.close();
             Scene scene = new Scene(root);

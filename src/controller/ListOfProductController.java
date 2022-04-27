@@ -119,7 +119,7 @@ public class ListOfProductController implements Initializable {
     @FXML
     private Button supp;
     @FXML
-    private Label MenuClosefront1;
+    private Button MenuClosefront1;
     @FXML
     private ImageView pdf;
     @FXML
@@ -359,7 +359,7 @@ public class ListOfProductController implements Initializable {
     @FXML
     private void btnStat(MouseEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/gui/PieChartView.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/Stat.fxml"));
             Stage stage = (Stage) stat.getScene().getWindow();
             stage.close();
             Scene scene = new Scene(root);
@@ -374,7 +374,7 @@ public class ListOfProductController implements Initializable {
     @FXML
     private void iconBtnStat(MouseEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/gui/PieChartView.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/Stat.fxml"));
             Stage stage = (Stage) iconStat.getScene().getWindow();
             stage.close();
             Scene scene = new Scene(root);
@@ -387,34 +387,7 @@ public class ListOfProductController implements Initializable {
     }
 
 
-    @FXML
-    private void btnFront(MouseEvent event) {
-         Product ev = tableProd.getSelectionModel().getSelectedItem();
-        ListOfProductController.ref_recup=ev.getReference();
-        ListOfProductController.productnamerecup=ev.getProductName();
-
-        ListOfProductController.decriptionrecup=ev.getDescription();
-        ListOfProductController.img_recup=ev.getImage();
-
-        
-        ListOfProductController.pricerecup=ev.getPrice();
-        ListOfProductController.stockrecup=ev.getStock();
-
-        ListOfProductController.id_rec=ev.getId();
-
-        System.out.println(ev.getId());
-         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/gui/Front.fxml"));
-            Stage stage = (Stage) mod.getScene().getWindow();
-            stage.close();
-            Scene scene = new Scene(root);
-            
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+  
 
   
     @FXML
@@ -436,7 +409,7 @@ public class ListOfProductController implements Initializable {
         doc.open();
 
         com.itextpdf.text.Image img = com.itextpdf.text.Image.getInstance("C:\\xampp\\htdocs\\PiDev-Brainstormers-main\\public\\logo9.png");
-        img.scaleAbsoluteWidth(600);
+        img.scaleAbsoluteWidth(400);
         img.scaleAbsoluteHeight(92);
         img.setAlignment(com.itextpdf.text.Image.ALIGN_CENTER);
         doc.add(img);
@@ -500,7 +473,7 @@ public class ListOfProductController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
-            alert.setContentText("Products details exported to PDF Sheet");
+            alert.setContentText("Products details exported to PDF ");
             alert.show();
 
     }
@@ -510,6 +483,35 @@ public class ListOfProductController implements Initializable {
          try {
             Parent root = FXMLLoader.load(getClass().getResource("/gui/AllProductFront.fxml"));
             Stage stage = (Stage) iconStat.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListOfProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void btnFront(ActionEvent event) {
+         Product ev = tableProd.getSelectionModel().getSelectedItem();
+        ListOfProductController.ref_recup=ev.getReference();
+        ListOfProductController.productnamerecup=ev.getProductName();
+
+        ListOfProductController.decriptionrecup=ev.getDescription();
+        ListOfProductController.img_recup=ev.getImage();
+
+        
+        ListOfProductController.pricerecup=ev.getPrice();
+        ListOfProductController.stockrecup=ev.getStock();
+
+        ListOfProductController.id_rec=ev.getId();
+
+        System.out.println(ev.getId());
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/Front.fxml"));
+            Stage stage = (Stage) mod.getScene().getWindow();
             stage.close();
             Scene scene = new Scene(root);
             

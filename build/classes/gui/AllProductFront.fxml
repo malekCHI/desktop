@@ -76,7 +76,7 @@
                                     </Label>
                                     <ScrollPane fx:id="scrollPaneItems" layoutX="14.0" layoutY="120.0" prefHeight="420.0" prefWidth="746.0" stylesheets="@../style.css">
                                        <content>
-                                          <HBox fx:id="boxItems" prefHeight="465.0" prefWidth="862.0" style="-fx-background-color: white;" />
+                                          <HBox fx:id="boxItems" prefHeight="465.0" prefWidth="928.0" style="-fx-background-color: white;" />
                                        </content>
                                     </ScrollPane>
                                  </children>
