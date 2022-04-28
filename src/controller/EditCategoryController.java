@@ -110,6 +110,7 @@ public class EditCategoryController implements Initializable {
         ServiceCategory pr=ServiceCategory.getInstance();
             pr.modifierCategory(prom); 
         //showMessageDialog(null, "update with succese");
+        
         Notifications.create()
                       .title("Added Complete")
                       .text("Saved").darkStyle().position(Pos.TOP_RIGHT)

@@ -21,7 +21,7 @@ import com.twilio.rest.api.v2010.account.Message;
 public class SmsTwillio {
 
     public static final String ACCOUNT_SID = "ACb76ca1ee6df7ce51f6b40ad98ee440b6";
-    public static final String AUTH_TOKEN = "a012c87dd2a495abfe0650043f14aa3c";
+    public static final String AUTH_TOKEN = "ca2d85c06b3a1508c30477c10b619779";
     public static void sms(String s) {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(

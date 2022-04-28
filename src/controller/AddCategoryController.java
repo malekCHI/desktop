@@ -225,7 +225,7 @@ public class AddCategoryController implements Initializable {
                       .text("Saved").darkStyle().position(Pos.TOP_RIGHT)
                       .showInformation();
             MailerService ms = new MailerService();
-            ms.replyMail("maryem.benmohamed@esprit.tn","maryem","Bonjour Monsieur votre operation a été acceptée");
+            ms.replyMail("maryem.benmohamed@esprit.tn","maryem","Bonjour Monsieur votre operation d'ajouter une catégorie a été acceptée");
     }
 
     @FXML

@@ -73,7 +73,6 @@ public class ListOfProductController implements Initializable {
     private TableView<Product> tableProd;
     @FXML
     private TableColumn<Product, String> refProd;
-    @FXML
     private TableColumn<Product, String> nameProd;
     @FXML
     private TableColumn<Product, String> descProd;
@@ -98,7 +97,6 @@ public class ListOfProductController implements Initializable {
     private Button reload;
     public static String img_recup;
 
-    @FXML
     private TableColumn<Category, String> cat;
     @FXML
     private Label goBtn2;
@@ -115,8 +113,6 @@ public class ListOfProductController implements Initializable {
     @FXML
     private ImageView iconStat;
     @FXML
-    private TableColumn<?, ?> id;
-    @FXML
     private Button supp;
     @FXML
     private Button MenuClosefront1;
@@ -124,6 +120,8 @@ public class ListOfProductController implements Initializable {
     private ImageView pdf;
     @FXML
     private Button idFront;
+    @FXML
+    private TableColumn<Product, String> name;
 
     /**
      * Initializes the controller class.
@@ -138,7 +136,7 @@ public class ListOfProductController implements Initializable {
         ObservableList<Product> obs = FXCollections.observableArrayList(ev);
         //table.setItems(obs);
         refProd.setCellValueFactory(new PropertyValueFactory<Product,String>("reference"));
-        nameProd.setCellValueFactory(new PropertyValueFactory<Product,String>("product_name"));
+        name.setCellValueFactory(new PropertyValueFactory<Product,String>("product_name"));
 
         descProd.setCellValueFactory(new PropertyValueFactory<Product,String>("description"));
         
@@ -146,7 +144,7 @@ public class ListOfProductController implements Initializable {
         priceProd.setCellValueFactory(new PropertyValueFactory<Product,Integer>("price"));
         stockProd.setCellValueFactory(new PropertyValueFactory<Product,Integer>("stock"));
         imgProd.setCellValueFactory(new PropertyValueFactory<Product,String>("image"));
-        cat.setCellValueFactory(new PropertyValueFactory<Category,String>("name"));
+        //cat.setCellValueFactory(new PropertyValueFactory<Category,String>("name"));
 
 
         
