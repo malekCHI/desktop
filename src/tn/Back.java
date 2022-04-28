@@ -36,14 +36,6 @@ public class Back  extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       //DBUtil dataSource = DBUtil.getInstance();
-       // TODO code application logic here
-        //OrderService ps = new OrderService();
-        //System.out.println(ps.afficher());
-        //Order p = new Order("hello",false,"malek","dddd",1234,2222);
-        //ps.ajouter2(p);
-        //Order p = new Order("Testy","malek","fff");
-        //ps.modifierFormation(p,6);
         launch(args);
          
         

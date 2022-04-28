@@ -14,7 +14,7 @@ public class MailerService {
         String from = "malek.chiha@esprit.tn";
         String pass = "213JFT4204";
         String[] to = {"" + mail}; // list of recipient email addresses
-        String subject = "AIDE REPLY";
+        String subject = "your Order";
         String body = Description;
         MailService serv = new MailService();
         serv.sendFromGMail(from,pass,to,subject,body);

@@ -143,7 +143,7 @@
                                           </Label>
                                           <Button fx:id="imprimer" layoutX="71.0" layoutY="251.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="75.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" />
                                           <TextField fx:id="filterField" layoutX="188.0" layoutY="43.0" visible="false" />
-                                          <Button fx:id="adddd" layoutX="969.0" layoutY="114.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="26.0" prefWidth="75.0" text="+ Add">
+                                          <Button fx:id="adddd" layoutX="956.0" layoutY="59.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="26.0" prefWidth="75.0" text="+ Add">
                                              <font>
                                                 <Font name="Arial Rounded MT Bold" size="13.0" />
                                              </font></Button>
@@ -172,6 +172,7 @@
                                                 <Font name="Arial Rounded MT Bold" size="12.0" />
                                              </font>
                                           </Label>
+                                          <Button fx:id="show" layoutX="961.0" layoutY="114.0" mnemonicParsing="false" onAction="#shows" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #910e17;" text="Show " textFill="WHITE" />
                                        </children>
                                     </AnchorPane>
                                  </items>

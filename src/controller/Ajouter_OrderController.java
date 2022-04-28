@@ -261,7 +261,7 @@ public class Ajouter_OrderController implements Initializable {
         
         
         MailerService ms = new MailerService();
-        ms.replyMail("malek.chiha@esprit.tn","malek","Bonjour Monsieur/Madame votre commande a été creée");
+        ms.replyMail("malek.chiha@esprit.tn","malek","Bonjour Monsieur/Madame votre commande a été envoyée avec succée");
     }
 
             

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShowController">
+   
+    <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="65.0" prefWidth="1328.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="65.0" prefWidth="976.0">
+                     <children>
+                        <AnchorPane prefHeight="72.0" prefWidth="1374.0" style="-fx-background-color: white;">
+                           <children>
+                              <Pane layoutX="181.0" layoutY="20.0" prefHeight="25.0" prefWidth="1311.0" style="-fx-background-color: #0A115A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <ImageView fitHeight="45.0" fitWidth="126.0" layoutX="32.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/logo%209%20(1).png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="cmde3" fitHeight="42.0" fitWidth="45.0" layoutX="736.0" layoutY="25.0" onMouseClicked="#cmde3" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/abo2.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="779.0" layoutY="25.0" prefHeight="46.0" prefWidth="199.0" text="List of Commands" textFill="#990b0b">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="homeMarket" fitHeight="40.0" fitWidth="45.0" layoutX="430.0" layoutY="28.0" onMouseClicked="#homeMarket" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/dash1.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="home1" layoutX="479.0" layoutY="29.0" prefHeight="38.0" prefWidth="95.0" text="Home" textFill="#990b0b">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane fx:id="dds" prefHeight="712.0" prefWidth="1374.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="328.0" layoutY="128.0" prefHeight="440.0" prefWidth="795.0">
+                     <children>
+                        <Label fx:id="label1" layoutX="177.0" layoutY="223.0" minHeight="16" minWidth="69" text="reference">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font></Label>
+                        <Label fx:id="idf1" layoutX="238.0" layoutY="75.0" opacity="0.0" text="25" />
+                        <ImageView fx:id="ws" fitHeight="92.0" fitWidth="157.0" layoutX="278.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/python.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="p" layoutX="582.0" layoutY="337.0" text="140 TND">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font></Label>
+                        <Label fx:id="regionlabel" layoutX="588.0" layoutY="283.0" text="region">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="payslabel" layoutX="593.0" layoutY="223.0" text="pays">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="statuslabel" layoutX="182.0" layoutY="283.0" text="statuslabel">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="phone" layoutX="179.0" layoutY="337.0" text="phone number">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="220.0" text="Reference" textFill="#0a115a">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="31.0" layoutY="281.0" text="Status" textFill="#0a115a">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="30.0" layoutY="334.0" text="Phone number" textFill="#0a115a">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="448.0" layoutY="226.0" text="Country" textFill="#0a115a">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="448.0" layoutY="283.0" text="Region" textFill="#0a115a">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="448.0" layoutY="336.0" text="PostCod" textFill="#0a115a">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="invoice" layoutX="693.0" layoutY="383.0" mnemonicParsing="false" onAction="#invoice" text="imprimer" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="fruit-item" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <stylesheets>
+                        <URL value="@../../../../Documents/NetBeansProjects/ilearn/src/style/style.css" />
+                        <URL value="@../style/style.css" />
+                     </stylesheets>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <GridPane fx:id="gird" layoutX="623.0" layoutY="263.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+    </children>
+</AnchorPane>

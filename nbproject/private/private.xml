@@ -25,9 +25,11 @@
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/Edit_OrderControllerBack.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/App.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/EditOrderFront.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/ShowController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/Cart/cart.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/MarketController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/launcher.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/utils/SmsTwillio.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/services/ServiceProduct.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/style/style.css</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/services/OrderService.java</file>
@@ -39,6 +41,7 @@
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/home/HomeController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/home/Product.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/view/Show.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/CartController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/controller/AfficherOrderBackController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop/src/tn/desktop/entities/Item.java</file>

@@ -125,6 +125,8 @@ public class AfficherOrderController implements Initializable {
     private TableColumn<Order, String> etatcheck;
     @FXML
     private Button exportToPdf;
+    @FXML
+    private Button show;
 
     /**
      * Initializes the controller class.
@@ -141,11 +143,12 @@ public class AfficherOrderController implements Initializable {
         ArrayList<Order> ev = (ArrayList<Order>) evcrud.afficher();
         ObservableList<Order> obs = FXCollections.observableArrayList(ev);
         //table.setItems(obs);
+        //extract the value from a given tableview row
         refe.setCellValueFactory(new PropertyValueFactory<Order,String>("ref_cmde"));
         tel.setCellValueFactory(new PropertyValueFactory<Order,Integer>("tel"));
         etatcheck.setCellValueFactory(new PropertyValueFactory<Order,String>("status"));
          FilteredList<Order>filteredData = new FilteredList<>(FXCollections.observableArrayList(ev), b -> true);
- 	// 2. Set the filter Predicate whenever the filter changes.
+ 	// Set the filter Predicate whenever the filter changes.
 		filterField.textProperty().addListener((observable, oldValue, newValue) -> {
 			filteredData.setPredicate(events -> {
 				// If filter text is empty, display all persons.
@@ -154,7 +157,7 @@ public class AfficherOrderController implements Initializable {
 					return true;
 				}
 				
-				// Compare first name and last name of every person with filter text.
+				// Compare refcmde of every order with filter text.
 				String lowerCaseFilter = newValue.toLowerCase();
 				
 				if (events.getRef_cmde().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
@@ -164,10 +167,10 @@ public class AfficherOrderController implements Initializable {
 			});
 		});
 		
-		// 3. Wrap the FilteredList in a SortedList. 
+		// hattt listt filtréee fi liste triée. 
 		SortedList<Order> sortedData = new SortedList<>(filteredData);
 		
-		// 4. Bind the SortedList comparator to the TableView comparator.
+		// Bind the SortedList comparator to the TableView comparator.
 		// 	  Otherwise, sorting the TableView would have no effect.
 		sortedData.comparatorProperty().bind(personsTable.comparatorProperty());
 
@@ -477,6 +480,33 @@ public class AfficherOrderController implements Initializable {
         
         
     }
+
+    @FXML
+    private void shows(ActionEvent event) {
+        
+        Order ev = personsTable.getSelectionModel().getSelectedItem();
+        AfficherOrderController.ref_order=ev.getRef_cmde();
+        AfficherOrderController.status_order=ev.getStatus();
+        AfficherOrderController.region_order=ev.getRegion();
+        AfficherOrderController.pays_order=ev.getPays();
+        AfficherOrderController.num_order=ev.getTel();
+        AfficherOrderController.code_order=ev.getCode_postal();
+         
+
+        System.out.println(ev.getId());
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/Show.fxml"));
+            Stage stage = (Stage) show.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AfficherOrderController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 
   
 }

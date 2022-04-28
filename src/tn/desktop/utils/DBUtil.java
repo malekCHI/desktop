@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * @author MSI
  */
 public class DBUtil {
-    // JDBC driver name and database URL
+    // JDBC driver name and database URL//api pour permettre l'accée liul database
 static final String jdbcDriver = "com.mysql.jdbc.Driver";
 static final String databaseUrl = "jdbc:mysql://localhost:3306/gamex22" ;
 static final String username="root";

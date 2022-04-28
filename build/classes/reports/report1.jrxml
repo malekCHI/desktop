@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ab945fd1-bc5a-49ca-bb2b-c7e8a74706d3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="225" y="23" width="228" height="40" forecolor="#CC0033" uuid="194a07b4-3660-4a1d-ad4c-25eb6bef33e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Baskerville Old Face" size="30" isBold="true" isItalic="false"/>
+					<paragraph tabStopWidth="80"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Bill]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="22" y="14" width="106" height="49" uuid="e00617b7-c2b3-4b71-b655-685560dc6087"/>
+				<imageExpression><![CDATA["C:\\Users\\MSI\\Downloads\\logo 9 (1).png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
