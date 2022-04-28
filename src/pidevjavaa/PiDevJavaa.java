@@ -41,7 +41,7 @@ private Parent parentPage;
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Hello World");
         
-        parentPage = FXMLLoader.load(getClass().getResource("/view/ajouter_reclamation.fxml"));
+        parentPage = FXMLLoader.load(getClass().getResource("/view/Menu.fxml"));
         Scene scene = new Scene(parentPage);
         this.primaryStage.setScene(scene);
         this.primaryStage.show();

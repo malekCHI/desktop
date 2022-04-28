@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -33,12 +34,6 @@ public class RépondreController implements Initializable {
 
     @FXML
     private AnchorPane show;
-    @FXML
-    private AnchorPane slider;
-    @FXML
-    private Label Menu;
-    @FXML
-    private Label MenuClose;
     @FXML
     private TextField labelttle;
     @FXML
@@ -69,9 +64,6 @@ public class RépondreController implements Initializable {
     private void form(MouseEvent event) {
     }
 
-    @FXML
-    private void promo(MouseEvent event) {
-    }
 
     @FXML
     private void abon(MouseEvent event) {
@@ -83,22 +75,23 @@ public class RépondreController implements Initializable {
 
     @FXML
     private void envoyer(ActionEvent Reclamation) {
-        
-   
-        
         Reclamation R = new Reclamation();
-       
-        R.setTitle(labelttle.getText()); 
+         //prom.setId(parseInt(ref.getText()));
+        R.setTitle(labelttle.getText());
         R.setDescription(labelDes.getText());
         R.setStatus(BoxC.getValue());
+Reclamation h = new Reclamation( labelttle.getText(), labelDes.getText(), BoxC.getValue());
+ReclamationService pr=ReclamationService.getInstance();
+                    pr.modifierStatus(h);
+        System.out.println("hahahah");
+      
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Information Dialog");
+                    alert.setHeaderText(null);
+                    alert.setContentText("status a été accepté/refusé");
+                    alert.show();
         
-
-        System.out.println("");
-       ReclamationService pr=ReclamationService.getInstance();
-            pr.modifierStatus(R); 
-        showMessageDialog(null, "update with succese");
-        
-        }
+    }
     }
     
 

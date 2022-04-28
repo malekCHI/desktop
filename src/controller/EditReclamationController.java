@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -48,19 +49,13 @@ public class EditReclamationController implements Initializable {
     @FXML
     private Button consulter;
     @FXML
-    private AnchorPane slider;
-    @FXML
-    private Label Menu;
-    @FXML
-    private Label MenuClose;
-    @FXML
     private TextField nom;
-    @FXML
-    private TextField refe;
     @FXML
     private TextArea des;
     @FXML
     private Button back;
+    @FXML
+    private ComboBox<?> fgg;
 
     /**
      * Initializes the controller class.
@@ -96,9 +91,6 @@ public class EditReclamationController implements Initializable {
     private void form(MouseEvent event) {
     }
 
-    @FXML
-    private void promo(MouseEvent event) {
-    }
 
     @FXML
     private void abon(MouseEvent event) {

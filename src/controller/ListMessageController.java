@@ -48,12 +48,6 @@ public class ListMessageController implements Initializable {
     @FXML
     private TableColumn<Communication, String> message;
     @FXML
-    private AnchorPane slider;
-    @FXML
-    private Label Menu;
-    @FXML
-    private Label MenuClose;
-    @FXML
     private Button deletec;
     @FXML
     private Button modc;
@@ -95,9 +89,6 @@ public class ListMessageController implements Initializable {
     private void form(MouseEvent event) {
     }
 
-    @FXML
-    private void promo(MouseEvent event) {
-    }
 
     @FXML
     private void abon(MouseEvent event) {

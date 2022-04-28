@@ -55,18 +55,8 @@ public class AffichageBackController implements Initializable {
     @FXML
     private TableColumn<Reclamation, String> tfStat;
     @FXML
-    private TableColumn<Reclamation, Date> tfDateC;
-    @FXML
-    private TableColumn<Reclamation, Date> tfDateR;
-    @FXML
     private Button supp;
     
-    @FXML
-    private AnchorPane slider;
-    @FXML
-    private Label Menu;
-    @FXML
-    private Label MenuClose;
     ObservableList<Reclamation> data = FXCollections.observableArrayList();
     @FXML
     private TableView<Reclamation> tbl_event;
@@ -94,8 +84,6 @@ public class AffichageBackController implements Initializable {
         tfClients.setCellValueFactory(new PropertyValueFactory<Reclamation, String>(""));
        // tfCommand.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("ref_cmde"));
         tfDes.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("description"));
-        tfDateC.setCellValueFactory(new PropertyValueFactory<Reclamation,Date>("create_date"));
-        tfDateR.setCellValueFactory(new PropertyValueFactory<Reclamation,Date>("create_resolution"));
         tfTitre.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("title"));
         tfStat.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("status"));
         
@@ -156,9 +144,6 @@ public class AffichageBackController implements Initializable {
     private void form(MouseEvent event) {
     }
 
-    @FXML
-    private void promo(MouseEvent event) {
-    }
 
     @FXML
     private void abon(MouseEvent event) {

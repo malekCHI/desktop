@@ -39,7 +39,7 @@ public class ReclamationService {
         
     }
          public void modifier(Reclamation t){
-        String req="update reclamation set title=? ,description =? where id=? ";
+        String req="update reclamation set title=? ,description =? , reference_id =? where title=? ";
         try {
             pst=cnx.prepareStatement(req);
             
@@ -48,7 +48,7 @@ public class ReclamationService {
             pst.setString(2,t.getDescription());
         
             
-            pst.setInt(3,t.getId());
+            pst.setString(3,t.getTitle());
           
 
            
@@ -61,13 +61,13 @@ public class ReclamationService {
         
     }
     public void ajouterPst(Reclamation p) {
-        String requete = "INSERT INTO `reclamation` (`Title`,`Description`) VALUES (?,?);";
+        String requete = "INSERT INTO `reclamation` (`Title`,`Description`,`reference_id`) VALUES (?,?,?);";
         
         try {
             pst = cnx.prepareStatement(requete);
             pst.setString(1, p.getTitle());
             pst.setString(2, p.getDescription());
-           // pst.setInt(3, p.getCmde().getId());
+           pst.setInt(3, p.getC());
           pst.executeUpdate();
             System.out.println("réclamation ajoutée");
         } catch (SQLException ex) {

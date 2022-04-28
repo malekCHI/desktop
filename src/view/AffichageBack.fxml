@@ -10,79 +10,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: blackk;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AffichageBackController">
    <children>
-      <TableView fx:id="tbl_event" layoutX="251.0" layoutY="274.0" opacity="0.73" prefHeight="302.0" prefWidth="965.0">
+      <TableView fx:id="tbl_event" layoutX="154.0" layoutY="279.0" opacity="0.73" prefHeight="302.0" prefWidth="694.0">
          <columns>
             <TableColumn fx:id="tfClients" prefWidth="160.99996948242188" text="Clients" />
             <TableColumn fx:id="tfCommand" prefWidth="176.0" text="Command's Reference " />
             <TableColumn fx:id="tfDes" prefWidth="132.800048828125" text="Description" />
-            <TableColumn fx:id="tfDateC" prefWidth="132.800048828125" text="Creation Date " />
-            <TableColumn fx:id="tfDateR" prefWidth="132.800048828125" text="Resolution Date" />
             <TableColumn fx:id="tfTitre" prefWidth="95.20001220703125" text="Title " />
             <TableColumn fx:id="tfStat" prefWidth="132.800048828125" text="Status" />
          </columns>
       </TableView>
-      <Button fx:id="supp" layoutX="917.0" layoutY="611.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="103.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Supprimer" textFill="WHITE">
+      <Button fx:id="supp" layoutX="560.0" layoutY="598.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="103.0" style="-fx-background-color: #d00f0f;" styleClass="add1-btn" stylesheets="@../style/style.css" text="Supprimer" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <AnchorPane fx:id="slider" layoutY="72.0" prefHeight="706.0" prefWidth="239.0" style="-fx-background-color: #242B6E;">
+      <AnchorPane layoutX="179.0" prefHeight="70.0" prefWidth="1353.0">
          <children>
-            <VBox layoutX="38.0" layoutY="184.0" prefHeight="632.0" prefWidth="229.0" AnchorPane.bottomAnchor="-53.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+            <AnchorPane layoutX="174.0" prefHeight="70.0" prefWidth="1185.0" style="-fx-background-color: white;">
                <children>
-                  <HBox onMouseClicked="#form" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/dash.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="60.0" prefWidth="95.0" text="Accueil" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox onMouseClicked="#promo" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/panier.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="53.0" prefWidth="136.0" text="Gestion Promotion" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox onMouseClicked="#abon" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/abo.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="53.0" prefWidth="122.0" text="Gestion Evenement" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox onMouseClicked="#stat" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/iii.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="60.0" prefWidth="95.0" text="Statistique" textFill="WHITE" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="70.0" prefWidth="1366.0">
-         <children>
-            <AnchorPane prefHeight="70.0" prefWidth="1359.0" style="-fx-background-color: white;">
-               <children>
-                  <Pane layoutX="181.0" layoutY="20.0" prefHeight="25.0" prefWidth="1311.0" style="-fx-background-color: #0A115A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Pane layoutX="-188.0" layoutY="-12.0" prefHeight="25.0" prefWidth="1373.0" style="-fx-background-color: #220643;" AnchorPane.leftAnchor="-188.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-12.0" />
                   <HBox layoutX="200.0" layoutY="-17.0" prefHeight="40.0" prefWidth="1087.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                      <children>
                         <HBox prefHeight="40.0" prefWidth="1132.0">
@@ -94,80 +43,66 @@
                                           <Image url="@../img/dash1.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="60.0" prefWidth="95.0" text="Accueil" textFill="#908a8a" />
+                                    <Label prefHeight="60.0" prefWidth="95.0" text=" Accueil" textFill="#140101" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
                                     <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../img/panier2.png" />
+                                          <Image url="@../img/cartIcon.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="45.0" prefWidth="130.0" text="Gestion Promotion" textFill="#908a8a" />
+                                    <Label prefHeight="45.0" prefWidth="130.0" text=" Panier" textFill="#140101" />
                                  </children>
                               </HBox>
                               <HBox onMouseClicked="#abon" prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
-                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: #140101;">
                                        <image>
                                           <Image url="@../img/abo2.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="45.0" prefWidth="146.0" text="Gestion Evenement" textFill="#908a8a" />
+                                    <Label prefHeight="45.0" prefWidth="146.0" text="Gestion Reclamation" textFill="#140101" />
                                  </children>
                               </HBox>
                               <HBox onMouseClicked="#stat" prefHeight="45.0" prefWidth="305.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
                                     <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../img/stat2.png" />
+                                          <Image url="@../img/commentsIcon.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="60.0" prefWidth="95.0" text="Statistique" textFill="#908a8a" />
+                                    <Label prefHeight="60.0" prefWidth="95.0" text="  Message" textFill="#140101" />
                                  </children>
                               </HBox>
                            </children>
                         </HBox>
                      </children>
                   </HBox>
-                  <Label fx:id="Menu" layoutX="25.0" layoutY="27.0" prefHeight="36.0" prefWidth="96.0" text="MENU">
-                     <graphic>
-                        <ImageView fitHeight="33.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/menu1.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Label>
-                  <Label fx:id="MenuClose" layoutX="25.0" layoutY="27.0" prefHeight="36.0" prefWidth="96.0" text="MENU">
-                     <graphic>
-                        <ImageView fitHeight="33.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/menu1.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Label>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <HBox prefHeight="100.0" prefWidth="200.0" />
-      <TextField fx:id="filterField" layoutX="313.0" layoutY="213.0" promptText="Search" />
-      <Button fx:id="mod1" layoutX="1039.0" layoutY="611.0" mnemonicParsing="false" onAction="#respond" prefHeight="26.0" prefWidth="103.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Répondre" textFill="#fffefe">
+      <TextField fx:id="filterField" layoutX="1292.0" layoutY="125.0" promptText="Search" />
+      <Button fx:id="mod1" layoutX="731.0" layoutY="598.0" mnemonicParsing="false" onAction="#respond" prefHeight="26.0" prefWidth="103.0" style="-fx-background-color: #d00f0f;" styleClass="add1-btn" stylesheets="@../style/style.css" text="Répondre" textFill="#fffefe">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="279.0" layoutY="137.0" prefHeight="29.0" prefWidth="212.0" text="List Reclamation" textFill="#3e6fae">
+      <Label layoutX="101.0" layoutY="137.0" prefHeight="29.0" prefWidth="263.0" text="List Reclamation" textFill="#d00f0f">
          <font>
             <Font name="Arial Bold Italic" size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="286.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="1250.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/searchIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="155.0" layoutX="-1.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo9.png" />
          </image>
       </ImageView>
    </children>

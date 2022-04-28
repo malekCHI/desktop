@@ -44,7 +44,7 @@ public class AffichageFronttController implements Initializable {
     @FXML
     private TableView<Reclamation> tb_rec1;
     @FXML
-    private TableColumn<Commande, ?> referencefr;
+    private TableColumn<Commande, String> referencefr;
     @FXML
     private TableColumn<Reclamation, String> titrefr;
     @FXML
@@ -55,17 +55,13 @@ public class AffichageFronttController implements Initializable {
     private Button supp;
     @FXML
     private Button mod;
-    @FXML
-    private AnchorPane slider;
-    @FXML
-    private Label Menu;
-    @FXML
-    private Label MenuClose;
     
  public static String nom_recup;
     public static String descriptionrecup;
     public static String statusrecup;
     public static String refrecup;
+    @FXML
+    private Button refresh;
     /**
      * Initializes the controller class.
      */
@@ -79,6 +75,8 @@ public class AffichageFronttController implements Initializable {
       //  referencefr.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("ref_cmde"));
         titrefr.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("title"));
         descriptionfr.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("description"));
+        referencefr.setCellValueFactory(new PropertyValueFactory<Commande, String>("reference_id"));
+
       //  statusfr.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("status"));
         
         
@@ -137,9 +135,6 @@ public class AffichageFronttController implements Initializable {
     private void form(MouseEvent event) {
     }
 
-    @FXML
-    private void promo(MouseEvent event) {
-    }
 
     @FXML
     private void abon(MouseEvent event) {
@@ -148,5 +143,21 @@ public class AffichageFronttController implements Initializable {
     @FXML
     private void stat(MouseEvent event) {
     }
-    
+
+    @FXML
+    private void Refresh(ActionEvent Reclamation) throws IOException {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/affichageFrontt.fxml"));
+            Stage stage = (Stage) refresh.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AffichageFronttController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
+    
+

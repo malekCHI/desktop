@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -9,86 +10,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditReclamationController">
    <children>
-      <Text fill="#3e6fae" layoutX="282.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Reclamation" textAlignment="CENTER" wrappingWidth="213.69842529296875">
+      <Text fill="#d00f0f" layoutX="68.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Reclamation" textAlignment="CENTER" wrappingWidth="213.69842529296875">
          <font>
             <Font name="Arial Bold Italic" size="24.0" />
          </font></Text>
-      <Text fx:id="ftTitle" fill="#3e6fae" layoutX="263.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" textAlignment="CENTER">
+      <Text fx:id="ftTitle" fill="#111010" layoutX="263.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font></Text>
-      <Text fx:id="ftDescription" fill="#3e6fae" layoutX="254.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER">
+      <Text fx:id="ftDescription" fill="#111010" layoutX="254.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font></Text>
-      <Text fx:id="ftcmde_ref" fill="#3e6fae" layoutX="252.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Command Reference " textAlignment="CENTER">
+      <Text fx:id="ftcmde_ref" fill="#111010" layoutX="252.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Command Reference " textAlignment="CENTER">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font></Text>
       <Text fill="#3e6fae" layoutX="466.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
-      <Button fx:id="consulter" layoutX="580.0" layoutY="570.0" mnemonicParsing="false" onAction="#modifierRec" prefHeight="25.0" prefWidth="75.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Modifier " textFill="WHITE">
+      <Button fx:id="consulter" layoutX="580.0" layoutY="570.0" mnemonicParsing="false" onAction="#modifierRec" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #d00f0f;" styleClass="add1-btn" stylesheets="@../style/style.css" text="Modifier ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <AnchorPane fx:id="slider" layoutY="68.0" prefHeight="700.0" prefWidth="229.0" style="-fx-background-color: #242B6E;">
-         <children>
-            <VBox layoutX="38.0" layoutY="184.0" prefHeight="632.0" prefWidth="229.0" AnchorPane.bottomAnchor="-53.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
-               <children>
-                  <HBox onMouseClicked="#form" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/dash.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="60.0" prefWidth="95.0" text="Accueil" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox onMouseClicked="#promo" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/panier.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="53.0" prefWidth="130.0" text="Gestion Promotion" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox onMouseClicked="#abon" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/abo.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="53.0" prefWidth="126.0" text="Gestion Evenement" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox onMouseClicked="#stat" prefHeight="53.0" prefWidth="176.0" styleClass="sidebarItem" stylesheets="@../style/style.css">
-                     <children>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/iii.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="60.0" prefWidth="95.0" text="Statistique" textFill="WHITE" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
       <AnchorPane prefHeight="70.0" prefWidth="1366.0">
          <children>
-            <AnchorPane prefHeight="70.0" prefWidth="1359.0" style="-fx-background-color: white;">
+            <AnchorPane layoutX="148.0" prefHeight="70.0" prefWidth="1211.0" style="-fx-background-color: white;">
                <children>
-                  <Pane layoutX="181.0" layoutY="20.0" prefHeight="25.0" prefWidth="1311.0" style="-fx-background-color: #0A115A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Pane layoutX="181.0" layoutY="20.0" prefHeight="25.0" prefWidth="1311.0" style="-fx-background-color: #220643;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <HBox layoutX="200.0" layoutY="-17.0" prefHeight="40.0" prefWidth="1087.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                      <children>
                         <HBox prefHeight="40.0" prefWidth="1132.0">
@@ -100,17 +52,17 @@
                                           <Image url="@../img/dash1.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="60.0" prefWidth="95.0" text="Accueil" textFill="#908a8a" />
+                                    <Label prefHeight="60.0" prefWidth="95.0" text="Accueil" textFill="#0d0d0d" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
                                     <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../img/panier2.png" />
+                                          <Image url="@../img/cartIcon.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="45.0" prefWidth="160.0" text="Gestion Promotion" textFill="#908a8a" />
+                                    <Label prefHeight="45.0" prefWidth="160.0" text=" Panier" textFill="#111010" />
                                  </children>
                               </HBox>
                               <HBox onMouseClicked="#abon" prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
@@ -120,53 +72,39 @@
                                           <Image url="@../img/abo2.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="45.0" prefWidth="144.0" text="Gestion Evenement" textFill="#908a8a" />
+                                    <Label prefHeight="45.0" prefWidth="144.0" text="Gestion Reclamation" textFill="#222121" />
                                  </children>
                               </HBox>
                               <HBox onMouseClicked="#stat" prefHeight="45.0" prefWidth="305.0" styleClass="menuItem" stylesheets="@../style/style.css">
                                  <children>
-                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="50.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../img/stat2.png" />
+                                          <Image url="@../../../../../Desktop/Gestion%20Réclamation/src/img/commentsIcon.png" />
                                        </image>
                                     </ImageView>
-                                    <Label prefHeight="60.0" prefWidth="95.0" text="Statistique" textFill="#908a8a" />
+                                    <Label prefHeight="46.0" prefWidth="145.0" text="   Message" />
                                  </children>
                               </HBox>
                            </children>
                         </HBox>
                      </children>
                   </HBox>
-                  <Label fx:id="Menu" layoutX="25.0" layoutY="27.0" prefHeight="36.0" prefWidth="96.0" text="MENU">
-                     <graphic>
-                        <ImageView fitHeight="33.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/menu1.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Label>
-                  <Label fx:id="MenuClose" layoutX="25.0" layoutY="27.0" prefHeight="36.0" prefWidth="96.0" text="MENU">
-                     <graphic>
-                        <ImageView fitHeight="33.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/menu1.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Label>
                </children>
             </AnchorPane>
+            <ImageView fitHeight="70.0" fitWidth="144.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo9.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <TextField id="prenomText" fx:id="nom" layoutX="468.0" layoutY="209.0" promptText="Enter your Title" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField id="prenomText" fx:id="nom" layoutX="468.0" layoutY="209.0" promptText="Enter your Title" style="-fx-background-color: transparent; -fx-border-color: #111010; -fx-border-width: 0px 0px 2px 0px;" />
       <TextArea fx:id="des" layoutX="468.0" layoutY="284.0" prefHeight="200.0" prefWidth="200.0" promptText="Enter your Description" />
-      <TextField id="prenomText" fx:id="refe" layoutX="468.0" layoutY="499.0" prefHeight="33.0" prefWidth="200.0" promptText="Enter your Reference" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="back" layoutX="493.0" layoutY="570.0" mnemonicParsing="false" onAction="#BackToList" prefHeight="25.0" prefWidth="75.0" styleClass="add1-btn" stylesheets="@../style/style.css" text="Back" textFill="WHITE">
+      <Button fx:id="back" layoutX="493.0" layoutY="570.0" mnemonicParsing="false" onAction="#BackToList" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #d00f0f;" styleClass="add1-btn" stylesheets="@../style/style.css" text="Back">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <ComboBox fx:id="fgg" layoutX="468.0" layoutY="510.0" prefHeight="31.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

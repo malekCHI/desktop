@@ -51,12 +51,6 @@ public class ajouter_messageController implements Initializable {
     private Button add;
     @FXML
     private Button list;
-    @FXML
-    private AnchorPane slider;
-    @FXML
-    private Label Menu;
-    @FXML
-    private Label MenuClose;
      Connection cnx = DataSource1.getInstance().getCnx();
      CommunicationService rs = CommunicationService.getInstance();
     @FXML
@@ -138,9 +132,6 @@ public class ajouter_messageController implements Initializable {
     private void form(MouseEvent event) {
     }
 
-    @FXML
-    private void promo(MouseEvent event) {
-    }
 
     @FXML
     private void abon(MouseEvent event) {

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="show" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <children>
+      <Text fx:id="ftcmde_ref" fill="#3e6fae" layoutX="252.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold Italic" size="18.0" />
+         </font></Text>
+      <Text fill="#3e6fae" layoutX="466.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+      <AnchorPane prefHeight="70.0" prefWidth="1366.0">
+         <children>
+            <AnchorPane layoutX="172.0" prefHeight="70.0" prefWidth="1187.0" style="-fx-background-color: white;">
+               <children>
+                  <Pane layoutX="181.0" layoutY="20.0" prefHeight="25.0" prefWidth="1311.0" style="-fx-background-color: #0A115A #0A115A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <HBox layoutX="200.0" layoutY="-17.0" prefHeight="40.0" prefWidth="1087.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                     <children>
+                        <HBox prefHeight="40.0" prefWidth="1132.0">
+                           <children>
+                              <HBox onMouseClicked="#form" prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
+                                 <children>
+                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/dash1.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="60.0" prefWidth="95.0" text="Accueil" textFill="#908a8a" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
+                                 <children>
+                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/panier2.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="45.0" prefWidth="160.0" text=" Panier" textFill="#908a8a" />
+                                 </children>
+                              </HBox>
+                              <HBox onMouseClicked="#abon" prefHeight="45.0" prefWidth="283.0" styleClass="menuItem" stylesheets="@../style/style.css">
+                                 <children>
+                                    <ImageView fx:id="showss" fitHeight="45.0" fitWidth="47.0" onMouseClicked="#shows" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/abo2.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="45.0" prefWidth="144.0" text="Gestion réclamation" textFill="#908a8a" />
+                                 </children>
+                              </HBox>
+                              <HBox onMouseClicked="#stat" prefHeight="45.0" prefWidth="305.0" styleClass="menuItem" stylesheets="@../style/style.css">
+                                 <children>
+                                    <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/commentsIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="60.0" prefWidth="95.0" text="  Message" textFill="#908a8a" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="67.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo9.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

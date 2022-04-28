@@ -42,12 +42,6 @@ public class Edit_MessageController implements Initializable {
     @FXML
     private Button list;
     @FXML
-    private AnchorPane slider;
-    @FXML
-    private Label Menu;
-    @FXML
-    private Label MenuClose;
-    @FXML
     private TextField titre_message;
     @FXML
     private TextArea message;
@@ -89,9 +83,6 @@ public class Edit_MessageController implements Initializable {
     private void form(MouseEvent event) {
     }
 
-    @FXML
-    private void promo(MouseEvent event) {
-    }
 
     @FXML
     private void abon(MouseEvent event) {

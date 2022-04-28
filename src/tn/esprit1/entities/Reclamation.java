@@ -20,8 +20,9 @@ public class Reclamation {
     private Date create_date;
     private Date create_resolution;
     private String Description;
-    private  String Status;
-    public Commande cmde; 
+    static  String Status="en cours";
+    public Commande cmde;
+    public int c;
 
         public Reclamation() {
         }
@@ -41,10 +42,10 @@ public class Reclamation {
         this.Description = Description;
         this.cmde = cmde; 
     }
-    public Reclamation(String Title, String Description,int id ) {
+    public Reclamation(String Title, String Description,int c ) {
         this.Title = Title;
         this.Description = Description;
-        this.id=id;
+        this.c=c;
     }
 
     public Reclamation(String Title, String Description, String Status) {
@@ -125,10 +126,22 @@ public class Reclamation {
         this.cmde = cmde;
     }
 
+    public int getC() {
+        return c;
+    }
+
+    public void setC(int c) {
+        this.c = c;
+    }
+
     @Override
     public String toString() {
-        return "Reclamation{" + "id=" + id + ", Title=" + Title + ", create_date=" + create_date + ", create_resolution=" + create_resolution + ", Description=" + Description + ", Status=" + Status + ", cmde=" + cmde + '}';
+        return "Reclamation{" + "id=" + id + ", Title=" + Title + ", create_date=" + create_date + ", create_resolution=" + create_resolution + ", Description=" + Description + ", Status=" + Status + ", cmde=" + cmde + ", c=" + c + '}';
     }
+    
+
+    
+    
 
     @Override
     public int hashCode() {
