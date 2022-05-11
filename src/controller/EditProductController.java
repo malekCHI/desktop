@@ -118,30 +118,23 @@ public class EditProductController implements Initializable {
     private void stat(MouseEvent event) {
     }
 
-    @FXML
+   @FXML
     private void editBtnProd(ActionEvent event) throws SQLException {
-        Product prom = new Product();
+        Product prom = new Product(txtReference.getText() , txtName.getText() , txtDescription.getText() , parseInt(txtPrice.getText()) , parseInt(txtStock.getText()) , 1);
          //prom.setId(parseInt(ref.getText()));
-        prom.setReference(txtReference.getText());
-        prom.setProductName(txtName.getText());
-        prom.setDescription(txtDescription.getText());
-        prom.setPrice(parseInt(txtPrice.getText()));
-        prom.setStock(parseInt(txtStock.getText()));
 
 
-        System.out.println("yes");
+
+        System.out.println(prom);
         ServiceProduct pr=ServiceProduct.getInstance();
             pr.modifierProduct(prom); 
-        //showMessageDialog(null, "update with succese");
+        showMessageDialog(null, "update with succese");
         Notifications.create()
                       .title("Added Complete")
                       .text("Saved").darkStyle().position(Pos.TOP_RIGHT)
                       .showInformation();
         
-        
-        
     }
-
     @FXML
     private void back(ActionEvent event) {
          try {

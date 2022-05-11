@@ -136,7 +136,7 @@ public class ListOfProductController implements Initializable {
         ObservableList<Product> obs = FXCollections.observableArrayList(ev);
         //table.setItems(obs);
         refProd.setCellValueFactory(new PropertyValueFactory<Product,String>("reference"));
-        name.setCellValueFactory(new PropertyValueFactory<Product,String>("product_name"));
+        name.setCellValueFactory(new PropertyValueFactory<Product,String>("productName"));
 
         descProd.setCellValueFactory(new PropertyValueFactory<Product,String>("description"));
         

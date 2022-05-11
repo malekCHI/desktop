@@ -109,7 +109,7 @@ public class ServiceCategory implements ICategory<Category>{
         }
     
     
-    public void modifierCategory(Category f) throws SQLException{
+   public void modifierCategory(Category f) throws SQLException{
         String req="update category set name=? ,description =? where id=? ";
         try {
             pst=cnx.prepareStatement(req);
@@ -135,8 +135,6 @@ public class ServiceCategory implements ICategory<Category>{
         }
         
     }
-
-
   
     @Override
     public void modifier(Category t) {

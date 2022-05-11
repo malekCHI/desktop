@@ -20,7 +20,17 @@ public class Product {
     public Category category;
     public int cat;
 
+    public int idCategory;
     public Product() {
+    }
+    
+        public Product(String reference, String ProductName, String description, int price, int stock, int  category) {
+        this.reference = reference;
+        this.product_name = ProductName;
+        this.description = description;
+        this.price = price;
+        this.stock = stock;
+        this.idCategory = category;
     }
 
     public Product(int id,String reference, String ProductName, String description,String image, int price, int stock, Category category) {

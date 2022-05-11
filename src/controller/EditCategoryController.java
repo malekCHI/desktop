@@ -45,8 +45,6 @@ public class EditCategoryController implements Initializable {
     @FXML
     private AnchorPane slider;
     @FXML
-    private Label Menu;
-    @FXML
     private Label MenuClose;
     @FXML
     private Label editNameCat;
@@ -97,12 +95,13 @@ public class EditCategoryController implements Initializable {
     private void stat(MouseEvent event) {
     }
 
-    @FXML
+   @FXML
     private void editBtnCat(ActionEvent Category) throws SQLException {
         Category prom = new Category();
          //prom.setId(parseInt(ref.getText()));
         prom.setName(txtNameCat.getText());
         prom.setDescription(txtDescCat.getText());
+        prom.setId(ListOfCategoryController.id_rec);
         
 
 

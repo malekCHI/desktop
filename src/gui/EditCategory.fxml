@@ -116,29 +116,30 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Label fx:id="editNameCat" layoutX="570.0" layoutY="344.0" text="Name">
+      <Pane layoutX="504.0" layoutY="160.0" prefHeight="499.0" prefWidth="536.0" style="-fx-background-color: white;" />
+      <Label fx:id="editNameCat" layoutX="580.0" layoutY="354.0" text="Name">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="editDescCat" layoutX="570.0" layoutY="415.0" text="Description" textFill="#030303">
+      <Label fx:id="editDescCat" layoutX="580.0" layoutY="425.0" text="Description" textFill="#030303">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNameCat" layoutX="720.0" layoutY="342.0" />
-      <Button fx:id="editBtn" layoutX="813.0" layoutY="499.0" mnemonicParsing="false" onAction="#editBtnCat" prefHeight="38.0" prefWidth="76.0" style="-fx-background-color: orange;" text="Edit" textFill="#fefeff">
+      <TextField fx:id="txtNameCat" layoutX="730.0" layoutY="352.0" />
+      <Button fx:id="editBtn" layoutX="823.0" layoutY="509.0" mnemonicParsing="false" onAction="#editBtnCat" prefHeight="38.0" prefWidth="76.0" style="-fx-background-color: orange;" text="Edit" textFill="#fefeff">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <TextField fx:id="txtDescCat" layoutX="719.0" layoutY="411.0" />
-      <Button fx:id="back" layoutX="906.0" layoutY="499.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="76.0" style="-fx-background-color: Blue;" text="Back" textFill="#fefeff">
+      <TextField fx:id="txtDescCat" layoutX="729.0" layoutY="421.0" />
+      <Button fx:id="back" layoutX="916.0" layoutY="509.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="76.0" style="-fx-background-color: Blue;" text="Back" textFill="#fefeff">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <Text fill="#cd2323" layoutX="693.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Category" textAlignment="CENTER" wrappingWidth="213.69842529296875">
+      <Text fill="#cd2323" layoutX="703.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Category" textAlignment="CENTER" wrappingWidth="213.69842529296875">
          <font>
             <Font name="Arial Rounded MT Bold" size="28.0" />
          </font>

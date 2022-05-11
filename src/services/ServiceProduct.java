@@ -183,20 +183,15 @@ public class ServiceProduct implements IProduct<Product>{
     }*/
     
     public void modifierProduct(Product f) throws SQLException{
-        String req="update product set reference=? ,product_name=? ,description=? ,image=? ,price=? ,stock=? where reference=? ";
+        String req="update product set reference=? ,product_name=? ,description=? ,price=? ,stock=? ,category_id=? where reference=? ";
         try {
             pst=cnx.prepareStatement(req);
-            
             pst.setString(1, f.getReference());
-
             pst.setString(2, f.getProductName());
-           
             pst.setString(3,f.getDescription());
-            pst.setString(4,f.getImage());
-            pst.setInt(5,f.getPrice());
-            pst.setInt(6,f.getStock());
-        
-            
+            pst.setInt(4,f.getPrice());
+            pst.setInt(5,f.getStock());
+            pst.setInt(6,f.idCategory);
             pst.setString(7,f.getReference());
             
             
@@ -213,6 +208,7 @@ public class ServiceProduct implements IProduct<Product>{
         }
         
     }
+
 
     @Override
     public void modifier(Product t) {
